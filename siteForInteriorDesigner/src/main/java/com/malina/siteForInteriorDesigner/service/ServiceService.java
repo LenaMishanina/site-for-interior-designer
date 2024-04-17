@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ServiceService {
-    List<ServiceEntity> findAllEmployee();
+    List<ServiceEntity> findAllService();
     Optional<ServiceEntity> findById(Long id);
-    ServiceEntity saveEmployee(ServiceEntity service);
-    ServiceEntity updateEmployee(ServiceEntity service);
-    void deleteEmployee(Long id);
+    ServiceEntity saveService(ServiceEntity service);
+    ServiceEntity updateService(ServiceEntity service);
+    void deleteService(Long id);
 }

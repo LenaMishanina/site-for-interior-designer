@@ -16,7 +16,7 @@ public class ServiceServiceImpl implements ServiceService {
     }
 
     @Override
-    public List<ServiceEntity> findAllEmployee() {
+    public List<ServiceEntity> findAllService() {
         return repository.findAll();
     }
 
@@ -26,17 +26,17 @@ public class ServiceServiceImpl implements ServiceService {
     }
 
     @Override
-    public ServiceEntity saveEmployee(ServiceEntity service) {
+    public ServiceEntity saveService(ServiceEntity service) {
         return repository.save(service);
     }
 
     @Override
-    public ServiceEntity updateEmployee(ServiceEntity service) {
+    public ServiceEntity updateService(ServiceEntity service) {
         return repository.save(service);
     }
 
     @Override
-    public void deleteEmployee(Long id) {
+    public void deleteService(Long id) {
         repository.deleteById(id);
     }
 }
