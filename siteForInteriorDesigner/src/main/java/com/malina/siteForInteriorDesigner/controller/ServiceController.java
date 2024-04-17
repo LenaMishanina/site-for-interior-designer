@@ -12,9 +12,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/service")
 public class ServiceController {
-    private final ServiceServiceImpl service;
+    private final ServiceService service;
 
-    public ServiceController(ServiceServiceImpl service) {
+    public ServiceController(ServiceService service) {
         this.service = service;
     }
     @GetMapping
