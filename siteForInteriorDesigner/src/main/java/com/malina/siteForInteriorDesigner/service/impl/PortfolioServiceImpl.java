@@ -15,6 +15,6 @@ public class PortfolioServiceImpl implements PortfolioService {
     @Override
     public PortfolioEntity getImage(String filename) {
         return repository.findByFilename(filename)
-                .orElseThrow(() -> new ImageNotFoundException());
+                .orElseThrow(ImageNotFoundException::new);
     }
 }
