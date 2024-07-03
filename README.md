@@ -24,7 +24,7 @@
 ```
 // Создание таблицы service
 create table if not exists service (
-		 id serial primary key,
+     id serial primary key,
      name varchar(255),
      short_description text,
      long_description text,
