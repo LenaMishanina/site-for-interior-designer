@@ -101,4 +101,4 @@ methods: {
         }
 }
 ```
-
+Пример представлен в site-for-interior-designer/part_of_code/src/views/ModalButton.vue
