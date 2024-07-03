@@ -1,6 +1,7 @@
 package com.malina.siteForInteriorDesigner.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 
 @Entity
 @Table(name = "portfolio")
@@ -9,21 +10,40 @@ public class PortfolioEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "filename", unique = true)
-    private String filename;
-    @Column(name = "mime_type")
-    private String mime_type;
-    @Column(name = "data")
-    private byte[] data;
+    @Column(name = "path")
+    private String path;
+
+    @Column(name = "index")
+    private Integer index;
 
     public PortfolioEntity() {
     }
 
-    public PortfolioEntity(Long id, String filename, String mime_type, byte[] data) {
+    public PortfolioEntity(Long id, String path, Integer index) {
         this.id = id;
-        this.filename = filename;
-        this.mime_type = mime_type;
-        this.data = data;
+        this.path = path;
+        this.index = index;
+    }
+
+    public PortfolioEntity(String path, Integer index) {
+        this.path = path;
+        this.index = index;
+    }
+
+    public Integer getIndex() {
+        return index;
+    }
+
+    public void setIndex(Integer index) {
+        this.index = index;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public Long getId() {
@@ -34,27 +54,4 @@ public class PortfolioEntity {
         this.id = id;
     }
 
-    public String getFilename() {
-        return filename;
-    }
-
-    public void setFilename(String filename) {
-        this.filename = filename;
-    }
-
-    public String getMime_type() {
-        return mime_type;
-    }
-
-    public void setMime_type(String mime_type) {
-        this.mime_type = mime_type;
-    }
-
-    public byte[] getData() {
-        return data;
-    }
-
-    public void setData(byte[] data) {
-        this.data = data;
-    }
 }

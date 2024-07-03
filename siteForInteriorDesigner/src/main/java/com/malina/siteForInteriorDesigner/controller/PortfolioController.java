@@ -1,29 +1,42 @@
 package com.malina.siteForInteriorDesigner.controller;
 
 import com.malina.siteForInteriorDesigner.entity.PortfolioEntity;
+import com.malina.siteForInteriorDesigner.entity.ServiceEntity;
 import com.malina.siteForInteriorDesigner.service.PortfolioService;
-import org.apache.tomcat.util.file.ConfigurationSource;
-import org.springframework.core.io.ByteArrayResource;
-import org.springframework.core.io.Resource;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:5173")
 public class PortfolioController {
     private final PortfolioService service;
-
+    @Autowired
     public PortfolioController(PortfolioService service) {
         this.service = service;
     }
-    @GetMapping("/portfolio/{filename}")
-    public ResponseEntity<Resource> retrieve(@PathVariable String filename) {
-        PortfolioEntity image = service.getImage(filename);
-        ByteArrayResource body = new ByteArrayResource(image.getData());
-
-        return ResponseEntity.ok().header(HttpHeaders.CONTENT_TYPE, image.getMime_type()).body(body);
+    @GetMapping("/portfolio")
+    public List<PortfolioEntity> getPortfolio() {
+        return service.findAllImage();
     }
+    @PostMapping("/portfolio/add")
+    public String addImage(@RequestBody PortfolioEntity image) {
+        service.addImage(image);
+        return "Image was added successfully...";
+    }
+    @GetMapping("/portfolio/{id}")
+    public PortfolioEntity getImageById(@PathVariable("id") long id){
+        return service.getImageById(id);
+    }
+    @PutMapping("/portfolio")
+    public PortfolioEntity updateImage(@RequestBody PortfolioEntity image) {
+        return service.updateImage(image);
+    }
+    @DeleteMapping("/portfolio/{id}")
+    public String deleteImage(@PathVariable("id") long id){
+        service.deleteImage(id);
+        return "Image was removed successfully...";
+    }
+
+
 }

@@ -4,6 +4,7 @@ import com.malina.siteForInteriorDesigner.entity.ServiceEntity;
 import com.malina.siteForInteriorDesigner.repository.ServiceRepository;
 import com.malina.siteForInteriorDesigner.service.ServiceService;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,17 +17,18 @@ public class ServiceServiceImpl implements ServiceService {
     }
 
     @Override
+    @ResponseBody
     public List<ServiceEntity> findAllService() {
         return repository.findAll();
     }
 
     @Override
-    public Optional<ServiceEntity> findById(Long id) {
-        return repository.findById(id);
+    public ServiceEntity findServiceById(Long id) {
+        return repository.findById(id).get();
     }
 
     @Override
-    public ServiceEntity saveService(ServiceEntity service) {
+    public ServiceEntity addService(ServiceEntity service) {
         return repository.save(service);
     }
 

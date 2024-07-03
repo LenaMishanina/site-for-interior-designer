@@ -8,5 +8,4 @@ import java.util.Optional;
 
 @Repository
 public interface PortfolioRepository extends JpaRepository<PortfolioEntity, Long> {
-    Optional<PortfolioEntity> findByFilename(String filename);
 }
