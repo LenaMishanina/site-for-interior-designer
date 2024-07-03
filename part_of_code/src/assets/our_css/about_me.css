@@ -1,0 +1,59 @@
+@font-face { 
+    font-family: 'Bitter-Light'; 
+    src: url("../our_fonts/Bitter-Light.ttf") format('truetype'); 
+} 
+ 
+.about_me { 
+    text-align: center; 
+    margin-left: 5%; 
+    justify-content: center; 
+    font-weight: bolder; 
+    margin-bottom: 40px; 
+    display: flex;
+} 
+ 
+.about_me_text { 
+    display: inline-block; 
+    color: #decfc9; 
+    font-family: 'Bitter-Light'; 
+    font-size: large; 
+    font-size: 40px; 
+    text-align: left; 
+    margin-left: 170px; 
+    top: -50px; 
+    position: relative; 
+    margin-top: 50px;
+} 
+ 
+.light_about_me_text { 
+    font-size: 30px; 
+    margin-top: 55px; 
+    margin-bottom: 237px; 
+    font-weight: lighter; 
+} 
+ 
+.button_for_get_request { 
+    color: #decfc9; 
+    font-family: 'Bitter-Light'; 
+    font-size: 20px; 
+    width: 350px; 
+    height: 50px; 
+    background: transparent; 
+    border: 2px solid #decfc9; 
+    border-radius: 40px; 
+    margin-top: 25px; 
+    transition: background-color 0.3s, color 0.3s; 
+} 
+ 
+.button_for_get_request:hover { 
+    font-weight: 600; 
+    background-color: #decfc9; 
+    color: #5A5148; 
+} 
+ 
+.button_for_get_request:active { 
+    transition: background-color 0.001s, color 0.001s; 
+    font-weight: 100; 
+    color: #decfc9; 
+    background-color: transparent; 
+}

@@ -1,0 +1,81 @@
+.small_section_about_me {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 120px;
+}
+
+.main_theme {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 350px;
+}
+
+.main_text {
+    color: #decfc9;
+    font-size: 3.0em;
+    font-family: 'Bitter-Light';
+    text-align: center;
+}
+
+.button_for_get_consultation {
+    color: #decfc9; 
+    font-family: 'Bitter-Light';
+    font-size: 20px; 
+    width: 450px; 
+    height: 50px; 
+    background: transparent; 
+    border: 2px solid #decfc9; 
+    border-radius: 40px; 
+    margin-top: 200px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button_for_get_consultation:hover {
+    font-weight: 600; 
+    background-color: #decfc9; 
+    color: #5A5148;
+}
+
+.button_for_get_consultation:active { 
+    transition: background-color 0.001s, color 0.001s; 
+    font-weight: 100; 
+    color: #decfc9;
+    background-color: transparent; 
+}
+
+.first_photo {
+    position: absolute;
+    margin-top: 200px;
+    margin-right: 1100px;
+
+}
+
+.second_photo_and_text {
+    position: absolute;
+    display: block;
+    width: 421px;
+    height: auto;
+    margin-top: 200px;
+    margin-left: 1100px;
+}
+
+.text_on_photo_name {
+    position: absolute;
+    top: 485px;
+    left: 215px;
+    color: #decfc9; 
+    font-family: 'Bitter-Light';
+    font-size: 20px;
+}
+
+.text_on_photo_profession {
+    position: absolute;
+    top: 508px;
+    left: 225px;
+    color: #decfc9; 
+    font-family: 'Bitter-Light';
+    font-size: 16px;
+}

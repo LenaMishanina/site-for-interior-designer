@@ -1,0 +1,90 @@
+.bottom {
+    width: 100%;
+    height: 200px;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+}
+
+.logo_bottom {
+    text-align: left;
+    color: #decfc9;
+    font-family: 'JuliusSansOne-Regular';
+    font-size: 27px;
+    transition: color 3s;
+    float: left;
+    padding-top: 70px;
+    padding-right: 30%;
+    cursor: default;
+}
+
+.logo_bottom:hover {
+    color: #e3256b;
+}
+
+.navigation_menu_bottom {
+    float: left;
+    width: 80px;
+    padding-top: 30px;
+    margin-right: 20%;
+}
+
+.button_to_about_me_bottom, .button_to_prices_bottom, .button_to_services_bottom, .button_to_stages_bottom, .button_to_portfolio_bottom, .button_to_request_bottom {
+    border: 1px solid transparent;
+    font-family: 'Bitter-Light';
+    color: #decfc9;
+    background-color: transparent;
+    border-radius: 20px;
+    transition: border 0.3s, color 0.3s;
+    padding: 3px;
+}
+
+.button_to_about_me_bottom:hover, .button_to_prices_bottom:hover, .button_to_services_bottom:hover, .button_to_stages_bottom:hover, .button_to_portfolio_bottom:hover, .button_to_request_bottom:hover {
+    border: 1px solid #decfc9;
+    border-radius: 20px;
+    color: #decfc9;
+    background-color: transparent;
+}
+
+.button_to_about_me_bottom:active, .button_to_prices_bottom:active, .button_to_services_bottom:active, .button_to_stages_bottom:active, .button_to_portfolio_bottom:active, .button_to_request_bottom:active {
+    transition: border 0.01s, color 0.01s;
+    border: 1px solid #a69892;
+    color: #a69892;
+}
+
+.contacts {
+    padding-left: 0%;
+    float: left;
+    font-family: 'Bitter-Light';
+    color: #decfc9;
+    width: 80px;
+    padding-top: 30px;
+}
+
+.information {
+    width: 170px;
+    margin-top: 25px;
+    line-height: 22px;
+    list-style: disc outside none;
+}
+
+.bullet {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: 0.15em;
+}
+
+.bullet::before {
+    content: '\2022';
+    color: #00a300;
+    font-size: 2.5em;
+}
+
+.bottom_photo {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-top: 40px;
+    margin-left: 150px;
+}

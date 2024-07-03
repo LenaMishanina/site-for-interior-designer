@@ -1,0 +1,129 @@
+@font-face {
+    font-family: 'Bitter-Light';
+    src: url("../our_fonts/Bitter-Light.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'JuliusSansOne-Regular';
+    src: url("../our_fonts/JuliusSansOne-Regular.ttf") format('truetype');
+}
+
+.portfolio {
+    background-color:#5B5147;
+    font-family: 'Bitter-Light';
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.title {
+    font-size: 49px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    letter-spacing: 1.28px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.line {
+    margin-top: auto;
+}
+
+.line_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.gallery > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.gallery > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(3, minmax(auto, auto));
+    grid-auto-rows: auto;
+    grid-auto-flow: dense;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-top: 20px;
+}
+
+.gallery .wide {
+    grid-column: span 2;
+}
+
+.gallery .tall {
+    grid-row: span 2;
+}
+
+.gallery .big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.modal_window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.819);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    animation: asd 0.25s ease-in-out none;
+}
+
+@keyframes asd {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-image {
+    max-width: 500px;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    border-radius: 30px;
+}
+
+.zoom-image {
+    transition: transform 0.3s;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.zoom-image:hover {
+    transform: scale(1.1);
+}
+
+
+.modal-window img {
+    transform: none !important;
+}

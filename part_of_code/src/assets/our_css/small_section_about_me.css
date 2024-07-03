@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'Bitter-Light';
+    src: url("../our_fonts/Bitter-Light.ttf") format('truetype');
+}
+
+.small_section_about_me {
+    background: #5A5148;
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+}
+
+.interior_photo {
+    width: 400px;
+    height: 550px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.main_text {
+    color: #decfc9;
+    font-family: 'Bitter-Light';
+    font-size: 45px;
+    margin-top: 250px;
+    text-align: center;
+}
+
+.button_for_get_consultation {
+    color: #decfc9;
+    font-family: 'Bitter-Light';
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #decfc9;
+    border-radius: 40px;
+    margin-top: 200px;
+    margin-left: 147px;
+    margin-right: 150px;
+    margin-bottom: 100px;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.button_for_get_consultation:hover {
+    background-color: #decfc9;
+    border: 2px solid #decfc9;
+    color: #5A5148;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.button_for_get_consultation:active {
+    transition: background-color 0.001s, color 0.001s, border 0.001s;
+    font-weight: 100;
+    color: #ccc;
+    background-color: transparent;
+}
+
+.photo_aliny_vitalevny {
+    width: 460px;
+    height: 571px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.text_on_photo_name {
+    position: absolute;
+    font-family: 'Bitter-light';
+    font-size: 20px;
+    color: #decfc9;
+    top: 485px;
+    left: 210px;
+}
+
+.text_on_photo_profession {
+    position: absolute;
+    font-family: 'Bitter-light';
+    font-size: 15px;
+    color: #decfc9;
+    top: 508px;
+    left: 237px;
+}

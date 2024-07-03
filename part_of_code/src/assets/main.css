@@ -1,0 +1,16 @@
+body {
+    background: #5A5148;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: #CCC;
+    color: #222;
+}

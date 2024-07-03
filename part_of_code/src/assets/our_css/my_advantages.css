@@ -1,0 +1,46 @@
+@font-face { 
+    font-family: 'Bitter-Light'; 
+    src: url("../our_fonts/Bitter-Light.ttf") format('truetype'); 
+} 
+ 
+.my_advantages { 
+    width: 1000px; 
+    height: 600px; 
+    padding-top: 1px; 
+    background-color: #decfc9; 
+    justify-content: center; 
+    text-align: center; 
+    margin: auto; 
+    border-radius: 25px; 
+    margin-bottom: 50px; 
+} 
+ 
+.title_advantages { 
+    font-size: 49px; 
+    font-weight: bolder; 
+    color: #5A5148; 
+    text-align: center; 
+    letter-spacing: 2px; 
+    margin-top: 30px; 
+    font-family: 'Bitter-Light'; 
+} 
+ 
+.step_advantage { 
+    display: inline-block; 
+    width: 250px; 
+    height: 200px; 
+    margin-left: 40px; 
+    margin-right: 40px; 
+    margin-top: 60px; 
+    vertical-align:text-top; 
+    justify-content: center; 
+} 
+ 
+.step_text { 
+    font-size: 16px; 
+    font-weight: bolder; 
+    color: #5A5148; 
+    text-align: center; 
+    margin-top: 15px; 
+    font-family: 'Bitter-Light'; 
+}

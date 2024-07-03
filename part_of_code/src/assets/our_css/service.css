@@ -1,0 +1,246 @@
+    @font-face {
+        font-family: 'Bitter-Light';
+        src: url("../our_fonts/Bitter-Light.ttf") format('truetype');
+    }
+
+    @font-face {
+        font-family: 'JuliusSansOne-Regular';
+        src: url("../our_fonts/JuliusSansOne-Regular.ttf") format('truetype');
+    }
+
+    .service {
+        font-family: 'Bitter-Light';
+        justify-content: center;
+        display: flex;
+        background-color:#433b33;
+        color: #decfc9;
+        background-size: cover;
+        background-position: center;
+        background-image: url("../src/images/back_service.png");
+        padding-bottom: 80px;
+    }
+
+    .title {
+        font-size: 49px;
+        color: #decfc9;
+        text-align: center;
+        letter-spacing: 1.28px;
+        margin-top: 19px;
+    }
+
+    .button {
+        width: 176px;
+        height: 40px;
+        background-color: transparent;
+        font-family: 'Bitter-Light';
+        font-weight: 500;
+        border: 2px solid white;
+        border-radius: 20px;
+        margin-top: 4px;
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        font-size: 23px;
+        color: white;
+        letter-spacing: -0.6px;
+        transition: background-color 0.3s, color 0.3s, border 0.3s;
+    }
+
+    .button:hover {
+        font-weight: 600;
+        background-color: white;
+        color: #5A5148;
+    }
+
+    .button:active {
+        transition: background-color 0.01s, color 0.01s, border 0.01s, font-weight 0.01s;
+        background-color: transparent;
+        color: #ccc;
+        border: 2px solid #ccc;
+        font-weight: 100;
+    }
+
+    .consultion {
+        width: 1280px;
+        height: 73px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .full_design_project {
+        width: 1280px;
+        height: 111px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .plan_desicion {
+        width: 1280px;
+        height: 77px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .sketchy_project {
+        width: 1280px;
+        height: 73px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .authors_supervision {
+        width: 1280px;
+        height: 73px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .nam_of_service {
+        color: #FFFFFF;
+        letter-spacing: 0.8px;
+        font-size: 23px;
+        margin-left: 122px;
+        width: 305px;
+        display: flex;
+        position: absolute;
+    }
+
+    .description_of_service {
+        color: #FFFFFF;
+        letter-spacing: 0.8px;
+        font-size: 23px;
+        width: 486px;
+        margin-left: 427px;
+        display: flex;
+        direction: row;
+        position: absolute;
+    }
+
+    .price_of_service {
+        left: 1030px;
+        color: #FFFFFF;
+        letter-spacing: 0.8px;
+        font-size: 23px;
+        margin-left: 7px;
+        width: 167px;
+        display: block;
+        text-align: center;
+    }
+
+    .button_wrapper {
+        height: 77px;
+        width: 176px;
+        display: block;
+        text-align: center;
+        margin-left: 1004px;
+    }
+
+    .line_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+
+    .line {
+        margin-top: auto;
+    }
+
+    .modal-shadow {
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.197);
+        backdrop-filter: blur(2px);
+    }
+
+    .modal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #8D8579;
+        margin: 15% auto;
+        border: 1px solid #888;
+        border-radius: 50px;
+        width: 740px;
+        box-shadow: 10px 10px 7.8px rgba(0, 0, 0, 0.452), 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: auto;
+        animation: asd 0.3s ease-in-out none;
+    }
+
+    @keyframes asd {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .modal_text {
+        color: white;
+        font-size: 25px;
+        letter-spacing: -0.1px;
+        text-align: left;
+        padding-top: 14px;
+        line-height: 30px;
+        display: block;
+    }
+
+    .modal_container {
+        display: block;
+        margin: 35px;
+    }
+
+    a {
+        color: #FFFFFF;
+        font-size: 25px;
+        text-align: center;
+        letter-spacing: -0.1px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s, text-decoration 0.3s;
+        border: 2px solid white;
+        border-radius: 40px;
+        padding-top: 2px;
+        padding-bottom: 3px;
+        padding-left: 10px;
+        padding-right: 10px; 
+        width: 250px;
+        height: 38px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    a:hover {
+        background-color: white;
+        color: #8D8579;
+        font-weight: 100;
+    }
+
+    a:active {
+        transition: background-color 0.01s, color 0.01s, text-decoration 0.01s;
+        background-color: #CCC;
+        background-color: transparent;
+        color: #CCC;
+        font-weight: 100;
+    }

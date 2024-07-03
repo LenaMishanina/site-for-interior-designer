@@ -1,0 +1,105 @@
+@font-face { 
+    font-family: 'Bitter-Light'; 
+    src: url("../our_fonts/Bitter-Light.ttf") format('truetype'); 
+} 
+ 
+.calculate_prices { 
+    justify-content: center; 
+    width: 100%; 
+} 
+ 
+.title_price { 
+    font-size: 49px; 
+    font-weight: bolder; 
+    color: #decfc9; 
+    text-align: center; 
+    letter-spacing: 3px; 
+    margin-top: 19px; 
+    font-family: 'Bitter-Light'; 
+} 
+ 
+.counting_block { 
+    text-align: center; 
+} 
+ 
+.calc_text { 
+    margin-top: 60px; 
+    margin-left: 50px; 
+    font-size: 30px; 
+    font-family: 'Bitter-Light'; 
+    margin-right: 30%; /*Выравнивание по ползунку*/ 
+    margin-bottom: 50px; 
+    color: #decfc9; 
+} 
+ 
+.slider { 
+    appearance: none; 
+    width: 50%; 
+    margin-left: 25%; 
+    margin-right: 25%; 
+    height: 10px; 
+    background: #decfc9 ; 
+    outline: none; 
+    border-radius: 12px; 
+} 
+ 
+.slider::-webkit-slider-thumb { 
+    appearance: none; 
+    width: 25px; 
+    height: 25px; 
+    border-radius: 50%; 
+    background: #decfc9; 
+} 
+ 
+.output1, .output2 { 
+    border-radius: 5%; 
+    border-color: #decfc9; 
+    width: 400px; 
+    height: 300px; 
+    background-color: #5A5148; 
+    margin: 5%; 
+    display: inline-block; 
+    padding-top: 20px; 
+    border: 2px solid #decfc9; 
+} 
+ 
+.text_inside_output { 
+    font-family: 'Bitter-Light'; 
+    font-size: 35px; 
+    font-weight: bolder; 
+    margin-top: 15px; 
+    color: #decfc9; 
+} 
+ 
+.total_price { 
+    font-family: 'Bitter-Light'; 
+    font-size: 25px; 
+    margin-top: 35px; 
+    color: #decfc9; 
+} 
+ 
+.button_for_get_more { 
+    color: #decfc9; 
+    font-family: 'Bitter-Light'; 
+    font-size: 20px; 
+    width: 250px; 
+    height: 50px; 
+    background: transparent; 
+    border: 2px solid #decfc9; 
+    border-radius: 40px; 
+    margin-top: 25px; 
+    transition: background-color 0.3s, color 0.3s; 
+} 
+ 
+.button_for_get_more:hover { 
+    font-weight: 600; 
+    background-color: #decfc9; 
+    color: #5A5148; 
+} 
+ 
+.button_for_get_more:active { 
+    transition: background-color 0.001s, color 0.001s; 
+    font-weight: 100; 
+    color: #decfc9; 
+    background-color: transparent; 
+}
