@@ -5,6 +5,8 @@ import com.malina.siteForInteriorDesigner.entity.ServiceEntity;
 import com.malina.siteForInteriorDesigner.service.PortfolioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -17,6 +19,17 @@ public class PortfolioController {
     }
     @GetMapping("/portfolio")
     public List<PortfolioEntity> getPortfolio() {
+        PortfolioEntity img1 = new PortfolioEntity(
+                Long.valueOf(1),
+                "../src/assets/images/complectation.png",
+                0
+        );
+        PortfolioEntity img2 = new PortfolioEntity(
+                Long.valueOf(2),
+                "../src/assets/images/project_frame.png",
+                1
+        );
+//        return Arrays.asList(img1, img2);
         return service.findAllImage();
     }
     @PostMapping("/portfolio/add")
