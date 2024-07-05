@@ -1,16 +1,16 @@
 package com.malina.siteForInteriorDesigner.service.impl;
 
 import com.malina.siteForInteriorDesigner.entity.UserEntity;
-import com.malina.siteForInteriorDesigner.repository.PortfolioRepository;
 import com.malina.siteForInteriorDesigner.repository.UserRepository;
 import com.malina.siteForInteriorDesigner.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository repository;
-
+    @Autowired
     public UserServiceImpl(UserRepository repository) {
         this.repository = repository;
     }
