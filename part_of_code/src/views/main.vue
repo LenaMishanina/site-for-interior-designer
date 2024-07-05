@@ -319,9 +319,9 @@
             <div class="contacts">
                 <p class="information">
                     Контакты:<br>
-                    <img src="@/assets/images/icon_mail.png" alt="" height="20" width="20"> kalina-@mail.ru<br>
-                    <img src="@/assets/images/icon_telephone.png" alt="" height="20" width="20"> +7-915-984-97-94<br>
-                    <img src="@/assets/images/icon_inst.png" alt="" height="20" width="20"> @alina_milkova_project
+                    <img src="../assets/images/icon_mail.png" alt="" height="20" width="20"> kalina-@mail.ru<br>
+                    <img src="../assets/images/icon_telephone.png" alt="" height="20" width="20"> +7-915-984-97-94<br>
+                    <img src="../assets/images/icon_inst.png" alt="" height="20" width="20"> @alina_milkova_project
                 </p>
             </div>
         </div>
@@ -352,6 +352,13 @@ export default {
     name_b: "V_celect",
     data() {
         return {
+            options: [
+                {name: 'Консультация', value:1},
+                {name: 'Полный дизайн-проект', value:2},
+                {name: 'Планировочное решение', value:3},
+                {name: 'Эскизный проект', value:4},
+                {name: 'Авторский надзор', value:5},
+            ],
             servic: [],
             portfolio: [],
             backgroundStyle: {
