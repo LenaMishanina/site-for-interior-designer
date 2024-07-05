@@ -10,7 +10,7 @@
  
 .about_me_text { 
     display: inline-block; 
-    color: #decfc9; 
+    color: #eae7de; 
     font-family: 'Bitter-Light'; 
     font-size: large; 
     font-size: 40px; 
@@ -28,13 +28,13 @@
 } 
  
 .button_for_get_request { 
-    color: #decfc9; 
+    color: #eae7de; 
     font-family: 'Bitter-Light'; 
     font-size: 20px; 
     width: 350px; 
     height: 50px; 
     background: transparent; 
-    border: 2px solid #decfc9; 
+    border: 2px solid #eae7de; 
     border-radius: 40px; 
     margin-top: 25px; 
     transition: background-color 0.3s, color 0.3s;
@@ -43,13 +43,13 @@
  
 .button_for_get_request:hover { 
     font-weight: 600; 
-    background-color: #decfc9; 
-    color: #5A5148; 
+    background-color: #721607; 
+    color: #eae7de; 
 } 
  
 .button_for_get_request:active { 
     transition: background-color 0.001s, color 0.001s; 
     font-weight: 100; 
-    color: #decfc9; 
+    color: #eae7de; 
     background-color: transparent; 
 }

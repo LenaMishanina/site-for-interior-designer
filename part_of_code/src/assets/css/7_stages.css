@@ -11,7 +11,7 @@
     position: relative;
     margin-top: 30px;
     height: 2000px;
-    background-color:#decfc9;
+    background-color:#eae7de;
     border-radius: 25px;
     width: 1550px;
 }
@@ -36,14 +36,14 @@
 
 .main_frame_stages p {
     font-family: 'Bitter-Light';
-    color: #5B5147;
+    color: #535353;
     font-size: 21px;
     font-weight: 100;
 }
 
 .main_frame_stages h6 {
     font-family: 'Bitter-Light';
-    color: #5B5147;
+    color: #535353;
     font-size: 40px;
     font-weight: 100;
 }
@@ -70,12 +70,12 @@
     opacity: 0;
     transform: translateX(125%);
     transition: opacity 1.5s, transform 2.5s;
-    background-color: #decfc9;
+    background-color: #eae7de;
 }
 
 .technical_task h6 {
     position: absolute;
-    color: #5B5147;
+    color: #535353;
     margin-top: 20px;
     margin-left: 50px;
 }
@@ -109,12 +109,12 @@
     opacity: 0;
     transform: translateX(-125%);
     transition: opacity 1.5s, transform 2.5s;
-    background-color: #decfc9;
+    background-color: #eae7de;
 }
 
 .project_frame h6 {
     position: absolute;
-    color: #5B5147;
+    color: #535353;
     margin-top: 20px;
     margin-left: 550px;
 }
@@ -149,12 +149,12 @@
     opacity: 0;
     transform: translateX(125%);
     transition: opacity 1.5s, transform 2.5s;
-    background-color: #decfc9;
+    background-color: #eae7de;
 }
 
 .visualization h6 {
     position: absolute;
-    color: #5B5147;
+    color: #535353;
     margin-top: 20px;
     margin-left: 50px;
 }
@@ -188,12 +188,12 @@
     opacity: 0;
     transform: translateX(-125%);
     transition: opacity 1.5s, transform 2.5s;
-    background-color: #decfc9;
+    background-color: #eae7de;
 }
 
 .work_documentation h6 {
     position: absolute;
-    color: #5B5147;
+    color: #535353;
     margin-top: 20px;
     margin-left: 550px;
 }
@@ -230,12 +230,12 @@
     opacity: 0;
     transform: translateX(125%);
     transition: opacity 1.5s, transform 2.5s;
-    background-color: #decfc9;
+    background-color: #eae7de;
 }
 
 .complectation h6 {
     position: absolute;
-    color: #5B5147;
+    color: #535353;
     margin-top: 20px;
     margin-left: 50px;
 }

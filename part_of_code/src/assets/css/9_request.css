@@ -1,7 +1,7 @@
 .request {
     position: relative;
     margin-top: 5px;
-    background: #5A5148;
+    background: #535353;
 }
 
 .main_request {
@@ -32,7 +32,7 @@ hr {
 }
 
 .for_background {
-    background: #5A5148;
+    background: #535353;
 }
 
 .text_price {
