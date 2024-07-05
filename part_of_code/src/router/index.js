@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import ModalButton from '../views/ModalButton.vue'
+import ModalButton from '../views/main.vue'
 
 
 const router = createRouter({
