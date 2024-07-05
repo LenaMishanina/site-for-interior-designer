@@ -5,12 +5,12 @@
     display: flex;
 
     justify-content: center;
-    color: #decfc9;
+    color: #eae7de;
     background-position: center;
     background-size: 100vw 1200px;
     background-repeat: no-repeat;
     padding-bottom: 80px;
-    background-color:#433b33;
+    background-color:#535353;
     overflow: hidden;
     margin: 0 auto;
     margin-bottom: 25px;
@@ -19,7 +19,7 @@
 
 .title {
     font-size: 49px;
-    color: #decfc9;
+    color: #eae7de;
     text-align: center;
     letter-spacing: 2px;
     margin-top: 19px;
@@ -31,14 +31,14 @@
     height: 40px;
     background-color: transparent;
     font-family: 'Bitter-Light';
-    font-weight: 500;
+    font-size: 20px; 
     border: 2px solid white;
     border-radius: 20px;
     margin-top: 4px;
     display: block;
     position: absolute;
     cursor: pointer;
-    font-size: 23px;
+    font-size: 20px;
     color: white;
     letter-spacing: -0.6px;
     transition: background-color 0.3s, color 0.3s, border 0.3s;
@@ -47,7 +47,7 @@
 .button:hover {
     font-weight: 600;
     background-color: white;
-    color: #5A5148;
+    color: #535353;
 }
 
 .button:active {

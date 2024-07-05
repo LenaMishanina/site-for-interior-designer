@@ -11,13 +11,12 @@
 }
 
 .logo_top {
-    color: #decfc9;
+    color: #a59a94;
     font-family: 'JuliusSansOne-Regular';
     font-size: 27px;
     margin-top: 14px;
     margin-right: 230px;
     float: left;
-    transition: color 3s;
     animation: animation_for_logo_top 4s ease-in-out none;
     cursor: default;
 }
@@ -31,11 +30,6 @@
     }
 }
 
-
-.logo_top:hover {
-    color: #e3256b;
-}
-
 .list_with_button_to_blocks_top {
     font-family: 'Bitter-Light';
     width: 1000px;
@@ -43,7 +37,7 @@
     margin-left: 100px;
     margin-top: 32px;
     left: 36%;
-    color: white;
+    color: #a59a94;
 }
 
 .button_to_about_me_top,  .button_to_prices_top, .button_to_services_top, .button_to_stages_top, .button_to_portfolio_top, .button_to_request_top, .button_to_contacts_top {
@@ -65,7 +59,7 @@
 }
 .button_to_about_me_top:hover,  .button_to_prices_top:hover, .button_to_services_top:hover, .button_to_stages_top:hover, .button_to_portfolio_top:hover, .button_to_request_top:hover, .button_to_contacts_top:hover {
     color: black;
-    border: 1px solid #decfc9;
+    border: 1px solid #a59a94;
     border-radius: 20px;
     font-size: 15px;
     font-weight: 600;
@@ -114,8 +108,8 @@
 
 @keyframes kaka {
     50% {
-        border: 1px solid #decfc9;
-        background-color: #decfc9;
+        border: 1px solid #a59a94;
+        background-color: #a59a94;
         font-weight: 800;
         font-size: 15px;
     }
@@ -126,20 +120,20 @@
 
 @keyframes koko {
     10% {
-        border: 1px solid #decfc9;
-        background-color: #decfc9;
+        border: 1px solid #a59a94;
+        background-color: #a59a94;
         color: transparent;
         font-weight: 800;
         font-size: 15px;
     }
     100% {
-        color: #decfc9;
+        color: #a59a94;
     }
 }
 
 .button_to_about_me_top:active,  .button_to_prices_top:active, .button_to_services_top:active, .button_to_stages_top:active, .button_to_portfolio_top:active, .button_to_request_top:active, .button_to_contacts_top:active {
     transition: background-color 0.05s, border 0.05s, color 0.05s;
-    color: #decfc9;
+    color: #a59a94;
     background-color: transparent;
     font-weight: 100;
 }

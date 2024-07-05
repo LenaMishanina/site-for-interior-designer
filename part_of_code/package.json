@@ -13,15 +13,19 @@
     "bootstrap": "^5.3.3",
     "inputmask": "^5.0.8",
     "maska": "^2.1.11",
+    "serve": "^14.2.3",
     "server": "^1.0.39",
     "vue": "^3.4.21",
     "vue-imask": "^7.6.1",
     "vue-inputmask": "^0.2.1",
+    "vue-router": "^4.0.13",
     "vue-the-mask": "^0.11.1"
   },
   "devDependencies": {
     "@types/inputmask": "^5.0.7",
     "@vitejs/plugin-vue": "^5.0.4",
-    "vite": "^5.3.2"
+    "vite": "^5.3.3",
+    "vite-plugin-copy": "^0.1.6",
+    "vite-plugin-static-copy": "^1.0.6"
   }
 }

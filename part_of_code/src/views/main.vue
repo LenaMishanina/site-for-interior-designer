@@ -3,7 +3,7 @@
 
         <!-- БЛОК "НАВИГАЦИОННОЕ МЕНЮ" -->
         <div class="navigation_menu_top">
-            <div class="logo_top" @click="forward('.main_frame', 150)">MALINA<br>PROJECTS.RU</div>
+            <div class="logo_top" @click="forward('.main_frame', 150)">MILKOVA<br>PROJECT.RU</div>
             <div class="list_with_button_to_blocks_top">
                 <button @click="forward('.calculate_prices', 150)" class="button_to_prices_top">ЦЕНЫ</button>
                 <button @click="forward('.about_me', 140)" class="button_to_about_me_top">ОБО МНЕ</button>
@@ -307,7 +307,7 @@
         <!-- КОНЕЦ -->
         <!-- БЛОК "НИЗ СТРАНИЦЫ" -->
         <div class="bottom">
-            <div class="logo_bottom" @click="forward('.main_frame', 150)">MALINA<br>PROJECTS.RU</div>
+            <div class="logo_bottom" @click="forward('.main_frame', 150)">MILKOVA<br>PROJECT.RU</div>
             <div class="navigation_menu_bottom">
                 <button @click="forward('.calculate_prices', 150)" class="button_to_prices_bottom">ЦЕНЫ</button>
                 <button @click="forward('.about_me', 140)" class="button_to_about_me_bottom">ОБО МНЕ</button>
@@ -319,9 +319,9 @@
             <div class="contacts">
                 <p class="information">
                     Контакты:<br>
-                    milkova.alina@mail.ru<br>
-                    +7-912-271-65-25<br>
-                    <span class="bullet"></span> Пн-Пт с 8:00-19:00
+                    <img src="@/assets/images/icon_mail.png" alt="" height="20" width="20"> kalina-@mail.ru<br>
+                    <img src="@/assets/images/icon_telephone.png" alt="" height="20" width="20"> +7-915-984-97-94<br>
+                    <img src="@/assets/images/icon_inst.png" alt="" height="20" width="20"> @alina_milkova_project
                 </p>
             </div>
         </div>

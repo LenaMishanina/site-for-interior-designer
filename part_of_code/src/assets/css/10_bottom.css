@@ -8,16 +8,11 @@
 
 .logo_bottom {
     text-align: left;
-    color: #decfc9;
+    color: #a59a94;
     font-family: 'JuliusSansOne-Regular';
     font-size: 27px;
-    transition: color 3s;
     margin-top: 70px;
     cursor: default;
-}
-
-.logo_bottom:hover {
-    color: #e3256b;
 }
 
 .navigation_menu_bottom {
@@ -30,7 +25,7 @@
 .button_to_about_me_bottom, .button_to_prices_bottom, .button_to_services_bottom, .button_to_stages_bottom, .button_to_portfolio_bottom, .button_to_request_bottom {
     border: 1px solid transparent;
     font-family: 'Bitter-Light';
-    color: #decfc9;
+    color: #a59a94;
     background-color: transparent;
     border-radius: 20px;
     transition: border 0.3s, color 0.3s;
@@ -39,9 +34,9 @@
 }
 
 .button_to_about_me_bottom:hover, .button_to_prices_bottom:hover, .button_to_services_bottom:hover, .button_to_stages_bottom:hover, .button_to_portfolio_bottom:hover, .button_to_request_bottom:hover {
-    border: 1px solid #decfc9;
+    border: 1px solid #a59a94;
     border-radius: 20px;
-    color: #decfc9;
+    color: #a59a94;
     background-color: transparent;
 }
 
@@ -55,13 +50,13 @@
     padding-left: 0%;
     float: left;
     font-family: 'Bitter-Light';
-    color: #decfc9;
+    color: #a59a94;
     width: 80px;
     padding-top: 30px;
 }
 
 .information {
-    width: 170px;
+    width: 300px;
     margin-top: 25px;
     line-height: 22px;
     list-style: disc outside none;
