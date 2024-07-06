@@ -25,16 +25,23 @@ public class AuthController {
     record RegisterResponse(Long id, String first_name, String last_name, String email) { }
     @PostMapping("/register")
     public RegisterResponse register(@RequestBody RegisterRequest registerRequest) {
-        if (!Objects.equals(registerRequest.password(), registerRequest.password_confirm())){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "password do not match");
-        }
-        UserEntity user = service.addUser(
-                UserEntity.off(
-                        registerRequest.first_name(),
-                        registerRequest.last_name(),
-                        registerRequest.email(),
-                        registerRequest.password()
-                )
+//        if (!Objects.equals(registerRequest.password(), registerRequest.password_confirm())){
+//            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "password do not match");
+//        }
+//        UserEntity user = service.addUser(
+//                UserEntity.off(
+//                        registerRequest.first_name(),
+//                        registerRequest.last_name(),
+//                        registerRequest.email(),
+//                        registerRequest.password()
+//                )
+//        );
+        UserEntity user = service.register(
+                registerRequest.first_name(),
+                registerRequest.last_name(),
+                registerRequest.email(),
+                registerRequest.password(),
+                registerRequest.password_confirm()
         );
         return new RegisterResponse(user.getId(), user.getFirst_name(), user.getLast_name(), user.getEmail());
     }
