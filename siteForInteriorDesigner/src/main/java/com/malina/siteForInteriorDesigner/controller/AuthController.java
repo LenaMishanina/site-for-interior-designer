@@ -4,6 +4,7 @@ import com.malina.siteForInteriorDesigner.entity.UserEntity;
 import com.malina.siteForInteriorDesigner.service.Login;
 import com.malina.siteForInteriorDesigner.service.UserService;
 import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -47,5 +48,11 @@ public class AuthController {
         response.addCookie(cookie);
 
         return new LoginResponse(login.getAccessToken().getToken());
+    }
+    record UserResponse(Long id, String first_name, String last_name, String email) { }
+    @GetMapping("/user")
+    public UserResponse user(HttpServletRequest request) {
+        UserEntity user = (UserEntity) request.getAttribute("user");
+        return new UserResponse(user.getId(), user.getFirst_name(), user.getLast_name(), user.getEmail());
     }
 }

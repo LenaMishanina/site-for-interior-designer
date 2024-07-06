@@ -9,6 +9,7 @@ import com.malina.siteForInteriorDesigner.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -53,6 +54,12 @@ public class UserServiceImpl implements UserService {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "invalid credentials");
         }
         return Login.of(user.getId(), accessTokenSecret, refreshTokenSecret);
+    }
+
+    @Override
+    public UserEntity getUserFromToken(String token) {
+        return repository.findById(Token.from(token, accessTokenSecret))
+                .orElseThrow(() -> new UsernameNotFoundException("ERRoR UserServiceImpl"));
     }
 
     @Override

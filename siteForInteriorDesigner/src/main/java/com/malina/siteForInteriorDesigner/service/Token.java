@@ -1,5 +1,7 @@
 package com.malina.siteForInteriorDesigner.service;
 
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.Getter;
@@ -13,7 +15,6 @@ import java.util.Date;
 public class Token {
     @Getter
     private final String token;
-
     public Token(String token) {
         this.token = token;
     }
@@ -27,5 +28,13 @@ public class Token {
                     .signWith(SignatureAlgorithm.HS256, Base64.getEncoder().encodeToString(secretKey.getBytes(StandardCharsets.UTF_8)))
                     .compact()
         );
+    }
+    public static Long from(String token, String secretKey) {
+        return ((Claims) Jwts.parser()
+                .setSigningKey(Base64.getEncoder().encodeToString(secretKey.getBytes(StandardCharsets.UTF_8)))
+                .build()
+                .parse(token)
+                .getBody())
+                .get("user_id", Long.class);
     }
 }
