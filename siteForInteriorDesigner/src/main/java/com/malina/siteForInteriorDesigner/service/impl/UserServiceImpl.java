@@ -18,12 +18,11 @@ import java.util.Objects;
 public class UserServiceImpl implements UserService {
     private final UserRepository repository;
     private final PasswordEncoder passwordEncoder;
-    @Autowired
+//    @Autowired
     public UserServiceImpl(UserRepository repository, PasswordEncoder passwordEncoder) {
         this.repository = repository;
         this.passwordEncoder = passwordEncoder;
     }
-
     @Override
     public UserEntity register(String first_name, String last_name, String email, String password, String password_confirm) {
         if (!Objects.equals(password, password_confirm)){
@@ -31,9 +30,22 @@ public class UserServiceImpl implements UserService {
         }
         return repository.save(UserEntity.off(first_name, last_name, email, passwordEncoder.encode(password)));
     }
+
+    @Override
+    public UserEntity login(String email, String password) {
+        System.out.println("USER_BY_EMAIL : " + repository.findByEmail(email));
+        UserEntity user = repository.findByEmail(email)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "invalid credentials"));
+        if (!passwordEncoder.matches(password, user.getPassword())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "invalid credentials");
+        }
+        return user;
+    }
+
     @Override
     public List<UserEntity> findAllUser() {
-        return repository.findAll();
+        return null;
+//        return repository.findAll();
     }
 
     @Override
