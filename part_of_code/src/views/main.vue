@@ -112,34 +112,31 @@
         <div class="service" :style="backgroundStyle">
             <nav class="nav_service">
                 <p class="title">УСЛУГИ ДИЗАЙНА</p>
-               
                 <div class="consultion" v-for="service in servic" :key="service.id">
-
                     <div class="line_container">
                         <img src="@/assets/images/line.png" class="line">
                     </div>
-                    <span class="nam_of_service">{{service.name}}</span>
-                    <span class="description_of_service">{{service.short_description}}</span>
-                    <div class="button_wrapper">
-                        <span class="price_of_service">{{service.price}} {{service.value_measure}}</span>
-                        <button class="button" @click="showModal(service.name)">Подробнее</button>
-                        <div v-if="modals[service.name]" @click.self="closeModal(service.name)" class="modal-shadow">
-                            <div class="modal">
-                                <div class="modal_container">
-                                    <span class="modal_text">{{service.long_description}}</span>
+                    <div class="one_service">
+                        <span class="nam_of_service">{{service.name}}</span>
+                        <span class="description_of_service">{{service.short_description}}</span>
+                        <div class="button_wrapper">
+                            <span class="price_of_service">{{service.price}} {{service.value_measure}}</span>
+                            <button class="button" @click="showModal(service.name)">Подробнее</button>
+                            <div v-if="modals[service.name]" @click.self="closeModal(service.name)" class="modal-shadow">
+                                <div class="modal">
+                                    <div class="modal_container">
+                                      <span class="modal_text">{{service.long_description}}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-       
                 </div>
                 <div class="line_container">
                     <img src="@/assets/images/line.png" class="line">
                 </div>
-
             </nav>
         </div>
-
         <!-- КОНЕЦ -->
 
         <!-- РЕАЛИЗОВАТЬ БЛОК "ЭТАПЫ" -->
