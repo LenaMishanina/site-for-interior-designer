@@ -1,13 +1,12 @@
 package com.malina.siteForInteriorDesigner.controller;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.malina.siteForInteriorDesigner.entity.UserEntity;
-import com.malina.siteForInteriorDesigner.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
-import java.util.Objects;
+import com.malina.siteForInteriorDesigner.entity.UserEntity;
+import com.malina.siteForInteriorDesigner.service.Login;
+import com.malina.siteForInteriorDesigner.service.UserService;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
@@ -35,10 +34,18 @@ public class AuthController {
         return new RegisterResponse(user.getId(), user.getFirst_name(), user.getLast_name(), user.getEmail());
     }
     record LoginRequest(String email, String password) { }
-    record LoginResponse(Long id, String first_name, String last_name, String email) { }
+    record LoginResponse(String token) { }
     @PostMapping("/login")
-    public LoginResponse login(@RequestBody LoginRequest loginRequest) {
-        UserEntity user = service.login(loginRequest.email(), loginRequest.password());
-        return new LoginResponse(user.getId(), user.getFirst_name(), user.getLast_name(), user.getEmail());
+    public LoginResponse login(@RequestBody LoginRequest loginRequest, HttpServletResponse response) {
+        Login login = service.login(loginRequest.email(), loginRequest.password());
+
+        Cookie cookie = new Cookie("refresh_token", login.getRefreshToken().getToken());
+        cookie.setMaxAge(3600);
+        cookie.setHttpOnly(true);
+        cookie.setPath("/api");
+
+        response.addCookie(cookie);
+
+        return new LoginResponse(login.getAccessToken().getToken());
     }
 }

@@ -3,8 +3,11 @@ package com.malina.siteForInteriorDesigner.service.impl;
 import com.malina.siteForInteriorDesigner.controller.AuthController;
 import com.malina.siteForInteriorDesigner.entity.UserEntity;
 import com.malina.siteForInteriorDesigner.repository.UserRepository;
+import com.malina.siteForInteriorDesigner.service.Login;
+import com.malina.siteForInteriorDesigner.service.Token;
 import com.malina.siteForInteriorDesigner.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -18,11 +21,21 @@ import java.util.Objects;
 public class UserServiceImpl implements UserService {
     private final UserRepository repository;
     private final PasswordEncoder passwordEncoder;
-//    @Autowired
-    public UserServiceImpl(UserRepository repository, PasswordEncoder passwordEncoder) {
+    private final String accessTokenSecret;
+    private final String refreshTokenSecret;
+
+    @Autowired
+    public UserServiceImpl(
+            UserRepository repository,
+            PasswordEncoder passwordEncoder,
+            @Value("${application.security.access-token-secret}") String accessTokenSecret,
+            @Value("${application.security.refresh-token-secret}") String refreshTokenSecret) {
         this.repository = repository;
         this.passwordEncoder = passwordEncoder;
+        this.accessTokenSecret = accessTokenSecret;
+        this.refreshTokenSecret = refreshTokenSecret;
     }
+
     @Override
     public UserEntity register(String first_name, String last_name, String email, String password, String password_confirm) {
         if (!Objects.equals(password, password_confirm)){
@@ -32,14 +45,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserEntity login(String email, String password) {
+    public Login login(String email, String password) {
         System.out.println("USER_BY_EMAIL : " + repository.findByEmail(email));
         UserEntity user = repository.findByEmail(email)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "invalid credentials"));
         if (!passwordEncoder.matches(password, user.getPassword())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "invalid credentials");
         }
-        return user;
+        return Login.of(user.getId(), accessTokenSecret, refreshTokenSecret);
     }
 
     @Override
