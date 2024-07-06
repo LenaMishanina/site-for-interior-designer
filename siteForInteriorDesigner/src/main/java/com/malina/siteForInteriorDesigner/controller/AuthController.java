@@ -1,4 +1,5 @@
 package com.malina.siteForInteriorDesigner.controller;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.malina.siteForInteriorDesigner.entity.UserEntity;
 import com.malina.siteForInteriorDesigner.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +17,18 @@ public class AuthController {
     public String hello() {
         return "hello!!!";
     }
+    record RegisterRequest(String first_name, String last_name, String email, String password, String password_confirm) { }
+    record RegisterResponse(Long id, String first_name, String last_name, String email) { }
     @PostMapping("/register")
-    public String register(@RequestBody UserEntity user) {
-        service.addUser(user);
-        return "User was registered successfully";
+    public RegisterResponse register(@RequestBody RegisterRequest registerRequest) {
+        UserEntity user = service.addUser(
+                UserEntity.off(
+                        registerRequest.first_name(),
+                        registerRequest.last_name(),
+                        registerRequest.email(),
+                        registerRequest.password()
+                )
+        );
+        return new RegisterResponse(user.getId(), user.getFirst_name(), user.getLast_name(), user.getEmail());
     }
 }
