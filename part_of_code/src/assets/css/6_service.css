@@ -36,7 +36,6 @@
     font-size: 20px; 
     border: 2px solid white;
     border-radius: 20px;
-    margin-top: 4px;
     cursor: pointer;
     color: white;
     letter-spacing: -0.6px;
@@ -88,6 +87,7 @@
     font-size: 23px;
     text-align: center;
     flex-basis: 10%;
+    margin-bottom: 5px;
 }
 
 .button_wrapper {
@@ -105,7 +105,6 @@
 
 .line {
     width: 1080px;
-
 }
 
 .modal-shadow {
@@ -124,9 +123,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #8D8579;
+    background-color: #535353;
     margin: 15% auto;
-    border: 1px solid #888;
     border-radius: 50px;
     width: 740px;
     box-shadow: 10px 10px 7.8px rgba(0, 0, 0, 0.452), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -196,4 +194,10 @@ a:active {
 .background_photo {
     display: inline;
     width: 1650px;
+}
+
+.modal_text br {
+    content: "";
+    display: block;
+    margin-top: 15px;
 }

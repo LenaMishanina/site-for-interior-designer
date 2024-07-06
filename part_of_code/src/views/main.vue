@@ -117,15 +117,15 @@
                         <img src="@/assets/images/line.png" class="line">
                     </div>
                     <div class="one_service">
-                        <span class="nam_of_service">{{service.name}}</span>
-                        <span class="description_of_service">{{service.short_description}}</span>
+                        <span class="nam_of_service" v-html="service.name"></span>
+                        <span class="description_of_service" v-html="service.short_description"></span>
                         <div class="button_wrapper">
-                            <span class="price_of_service">{{service.price}} {{service.value_measure}}</span>
+                            <span class="price_of_service" v-html="formatPrice(service)"></span>
                             <button class="button" @click="showModal(service.name)">Подробнее</button>
                             <div v-if="modals[service.name]" @click.self="closeModal(service.name)" class="modal-shadow">
                                 <div class="modal">
                                     <div class="modal_container">
-                                      <span class="modal_text">{{service.long_description}}</span>
+                                      <span class="modal_text" v-html="service.long_description"></span>
                                     </div>
                                 </div>
                             </div>
@@ -375,6 +375,9 @@ export default {
         };
     },
     methods: {
+        formatPrice(service) {
+            return `${service.price} ${service.value_measure}`;
+        },
         getServices(){
                 fetch('http://localhost:8080/service')
                 .then(res => res.json())
