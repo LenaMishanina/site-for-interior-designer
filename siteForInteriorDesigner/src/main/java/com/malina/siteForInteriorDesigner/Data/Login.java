@@ -1,4 +1,4 @@
-package com.malina.siteForInteriorDesigner.service;
+package com.malina.siteForInteriorDesigner.Data;
 
 import lombok.Getter;
 

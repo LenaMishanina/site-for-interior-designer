@@ -1,10 +1,9 @@
 package com.malina.siteForInteriorDesigner.service.impl;
 
-import com.malina.siteForInteriorDesigner.controller.AuthController;
 import com.malina.siteForInteriorDesigner.entity.UserEntity;
 import com.malina.siteForInteriorDesigner.repository.UserRepository;
-import com.malina.siteForInteriorDesigner.service.Login;
-import com.malina.siteForInteriorDesigner.service.Token;
+import com.malina.siteForInteriorDesigner.Data.Login;
+import com.malina.siteForInteriorDesigner.Data.Token;
 import com.malina.siteForInteriorDesigner.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,7 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;

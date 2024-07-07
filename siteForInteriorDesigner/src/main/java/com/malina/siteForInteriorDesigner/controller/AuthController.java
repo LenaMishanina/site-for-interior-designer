@@ -1,7 +1,7 @@
 package com.malina.siteForInteriorDesigner.controller;
 
 import com.malina.siteForInteriorDesigner.entity.UserEntity;
-import com.malina.siteForInteriorDesigner.service.Login;
+import com.malina.siteForInteriorDesigner.Data.Login;
 import com.malina.siteForInteriorDesigner.service.UserService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
