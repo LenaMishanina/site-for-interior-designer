@@ -9,8 +9,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Ref;
-
 @RestController
 @RequestMapping("/api")
 public class AuthController {
@@ -61,5 +59,16 @@ public class AuthController {
     @PostMapping("/refresh")
     public RefreshResponse refresh(@CookieValue("refresh_token") String refreshToken) {
         return new RefreshResponse(service.refreshAccess(refreshToken).getAccessToken().getToken());
+    }
+    record LogoutResponse(String message) { }
+    @PostMapping("/logout")
+    public LogoutResponse logout(HttpServletResponse response) {
+        Cookie cookie = new Cookie("refresh_token", null);
+        cookie.setMaxAge(0);
+        cookie.setHttpOnly(true);
+
+        response.addCookie(cookie);
+
+        return new LogoutResponse("success");
     }
 }
