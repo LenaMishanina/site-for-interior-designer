@@ -63,6 +63,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public Login refreshAccess(String refreshToken) {
+        Long userId = Token.from(refreshToken, refreshTokenSecret);
+        Login login = Login.of(userId, accessTokenSecret, Token.of(refreshToken));
+        return login;
+    }
+
+    @Override
     public List<UserEntity> findAllUser() {
         return null;
 //        return repository.findAll();

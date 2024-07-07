@@ -9,6 +9,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Ref;
+
 @RestController
 @RequestMapping("/api")
 public class AuthController {
@@ -54,5 +56,10 @@ public class AuthController {
     public UserResponse user(HttpServletRequest request) {
         UserEntity user = (UserEntity) request.getAttribute("user");
         return new UserResponse(user.getId(), user.getFirst_name(), user.getLast_name(), user.getEmail());
+    }
+    record RefreshResponse(String token) { }
+    @PostMapping("/refresh")
+    public RefreshResponse refresh(@CookieValue("refresh_token") String refreshToken) {
+        return new RefreshResponse(service.refreshAccess(refreshToken).getAccessToken().getToken());
     }
 }

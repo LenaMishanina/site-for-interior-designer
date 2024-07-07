@@ -18,6 +18,9 @@ public class Token {
     public Token(String token) {
         this.token = token;
     }
+    public static Token of(String token) {
+        return new Token(token);
+    }
     public static Token of(Long userId, Long validityInMinutes, String secretKey) {
         var issueDate = Instant.now();
         return new Token(
