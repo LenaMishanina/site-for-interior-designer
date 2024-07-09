@@ -3,18 +3,20 @@
     padding-top: 40px;
     font-family: 'Bitter-Light';
     display: flex;
-
     justify-content: center;
     color: #eae7de;
     background-position: center;
-    background-size: 100vw 1200px;
+    background-size: cover;
     background-repeat: no-repeat;
-    padding-bottom: 80px;
-    background-color:#535353;
+    padding-bottom: 100px;
+    background-color: #535353;
     overflow: hidden;
     margin: 0 auto;
-    margin-bottom: 25px;
-    padding-bottom: 100px;
+}
+
+
+.consultion {
+    width: 1080px;
 }
 
 .title {
@@ -34,11 +36,7 @@
     font-size: 20px; 
     border: 2px solid white;
     border-radius: 20px;
-    margin-top: 4px;
-    display: block;
-    position: absolute;
     cursor: pointer;
-    font-size: 20px;
     color: white;
     letter-spacing: -0.6px;
     transition: background-color 0.3s, color 0.3s, border 0.3s;
@@ -58,94 +56,45 @@
     font-weight: 100;
 }
 
-.consultion {
-    width: 1280px;
-    height: 73px;
-    text-align: left;
+.one_service {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.full_design_project {
-    width: 1280px;
-    height: 111px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.plan_desicion {
-    width: 1280px;
-    height: 77px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.sketchy_project {
-    width: 1280px;
-    height: 73px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.authors_supervision {
-    width: 1280px;
-    height: 73px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    padding: 10px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .nam_of_service {
     color: #FFF;
     letter-spacing: 0.8px;
     font-size: 23px;
-    margin-left: 122px;
-    width: 305px;
-    display: flex;
-    position: absolute;
+    flex-basis: 20%;
 }
 
 .description_of_service {
     color: #FFFFFF;
     letter-spacing: 0.8px;
     font-size: 23px;
-    width: 486px;
-    margin-left: 427px;
-    display: flex;
-    direction: row;
-    position: absolute;
+    flex-basis: 50%;
+    padding: 0 0px;
 }
 
 .price_of_service {
-    left: 1030px;
     color: #FFFFFF;
     letter-spacing: 0.8px;
     font-size: 23px;
-    margin-left: 7px;
-    width: 167px;
-    display: block;
     text-align: center;
+    flex-basis: 10%;
+    margin-bottom: 5px;
 }
 
 .button_wrapper {
-    height: 77px;
-    width: 176px;
-    display: block;
-    text-align: center;
-    margin-left: 1004px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 20%;
 }
 
 .line_container {
@@ -155,7 +104,7 @@
 }
 
 .line {
-    margin-top: auto;
+    width: 1080px;
 }
 
 .modal-shadow {
@@ -174,9 +123,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #8D8579;
+    background-color: #535353;
     margin: 15% auto;
-    border: 1px solid #888;
     border-radius: 50px;
     width: 740px;
     box-shadow: 10px 10px 7.8px rgba(0, 0, 0, 0.452), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -200,11 +148,9 @@
     text-align: left;
     padding-top: 14px;
     line-height: 30px;
-    display: block;
 }
 
 .modal_container {
-    display: block;
     margin: 35px;
 }
 
@@ -236,7 +182,6 @@ a:hover {
 
 a:active {
     transition: background-color 0.01s, color 0.01s, text-decoration 0.01s;
-    background-color: #CCC;
     background-color: transparent;
     color: #CCC;
     font-weight: 100;
@@ -251,4 +196,8 @@ a:active {
     width: 1650px;
 }
 
-
+.modal_text br {
+    content: "";
+    display: block;
+    margin-top: 15px;
+}
