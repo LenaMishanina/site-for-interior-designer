@@ -53,13 +53,13 @@
 
 }
 
-.second_photo_and_text {
+.second_photo {
     position: absolute;
     display: block;
-    width: 421px;
-    height: auto;
-    margin-top: 200px;
-    margin-left: 1100px;
+    width: auto;
+    height: 520px;
+    margin-top: -150px;
+    margin-left: 120px;
 }
 
 .text_on_photo_name {
