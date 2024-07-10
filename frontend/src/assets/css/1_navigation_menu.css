@@ -1,3 +1,4 @@
+@media (min-width: 700px) {
 .navigation_menu_top {
     z-index: 9999;
     position: fixed;
@@ -136,4 +137,107 @@
     color: #a59a94;
     background-color: transparent;
     font-weight: 100;
+}
+
+.image_for_open_menu, .nav_menu_for_mobile {
+    display: none;
+}
+}
+
+@media (max-width: 700px) {
+    .navigation_menu_top {
+        z-index: 9999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 85px;
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        background-color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .logo_top {
+        color: #a59a94;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 27px;
+        cursor: default;
+        margin-left: 20px;
+    }
+
+    .image_for_open_menu {
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+    }
+
+    .image_for_open_menu img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav_menu_for_mobile {
+        z-index: 9999;
+        position: fixed;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 900px;
+        background-color: #343434;
+        display: flex;
+        justify-content: space-between;
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        background-color: rgba(0, 0, 0, 0.8);
+        transition: opacity 0.5s;
+    }
+    
+    .nav_menu_for_mobile.show {
+        opacity: 1;
+    }
+    
+    .logo {
+        color: #a59a94;
+        font-family: 'JuliusSansOne-Regular';
+        font-size: 27px;
+        cursor: default;
+        margin-left: 20px;
+        margin-top: 13px;
+    }
+    .list_of_blocks {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        position: absolute;
+        text-align: center;
+        align-items: center;
+        color: white;
+        z-index: 10000;
+        top: 250px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    li {
+        margin-bottom: 15px;
+        color: #a59a94;
+        font-family: 'Bitter-Light';
+        font-size: 20px;
+        font-weight: 100;
+    }
+    .double_arrow {
+        margin-right: 20px;
+        margin-top: 21px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .list_with_button_to_blocks_top {
+        display: none;
+    }
 }
