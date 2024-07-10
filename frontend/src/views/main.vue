@@ -4,6 +4,9 @@
         <!-- БЛОК "НАВИГАЦИОННОЕ МЕНЮ" -->
         <div class="navigation_menu_top">
             <div class="logo_top" @click="forward('.main_frame', 150)">MILKOVA<br>PROJECT.RU</div>
+            <div class="image_for_open_menu">
+                <img @click="toggleMenu" src="../assets/images/menu (3).png" alt="">
+            </div>
             <div class="list_with_button_to_blocks_top">
                 <button @click="forward('.calculate_prices', 150)" class="button_to_prices_top">ЦЕНЫ</button>
                 <button @click="forward('.about_me', 140)" class="button_to_about_me_top">ОБО МНЕ</button>
@@ -14,19 +17,32 @@
                 <button @click="forward('.contacts', 0)" class="button_to_contacts_top">КОНТАКТЫ</button>
             </div>
         </div>
+        <div :class="['nav_menu_for_mobile', { show: isMenuVisible }]">
+                <div class="logo">MILKOVA<br>PROJECT.RU</div>
+                <div class="container_for_double_arrow">
+                    <img @click="toggleMenu" class="double_arrow" src="../assets/images/double_arrow.png">
+                </div>
+                <ul class="list_of_blocks">
+                    <li @click="secondForward('.calculate_prices', 100)">ЦЕНЫ</li>
+                    <li @click="secondForward('.about_me', 70)">ОБО МНЕ</li>
+                    <li @click="secondForward('.service', 70)">УСЛУГИ</li>
+                    <li @click="secondForward('.stages', 70)">ЭТАПЫ</li>
+                    <li @click="secondForward('.portfolio', 70)">ПОРТФОЛИО</li>
+                    <li @click="secondForward('.request', 70)">ЗАЯВКА</li>
+                    <li @click="secondForward('.contacts', 70)">КОНТАКТЫ</li>
+                </ul>
+        </div>
         <!-- КОНЕЦ -->
 
         <!-- БЛОК "ТИТУЛЬНИК" -->
         <div class="small_section_about_me">
-            <img class="first_photo" src="@/assets/images/interior_photo.png" alt="">
+            <img class="first_photo" src="../assets/images/interior_photo.png" alt="">
             <div class="main_theme">
                 <p class="main_text">Дизайн интерьера<br>в Ярославле</p>
                 <button @click="forward('.request', 30)" class="button_for_get_consultation">Получить консультацию</button>
             </div>
             <div class="second_photo_and_text">
-                <img class="second_photo" src="@/assets/images/photo_aliny_vitalevny1.png" alt="">
-                <p class="text_on_photo_name">Алина Милкова</p>
-                <p class="text_on_photo_profession">Дизайнер интерьера</p>
+                <img class="second_photo" src="../assets/images/bedroom.png" alt="">
             </div>
         </div>
         <!-- КОНЕЦ -->
@@ -63,7 +79,7 @@
         <!-- РЕАЛИЗОВАТЬ БЛОК "ОБО МНЕ" -->
         <div class="about_me">
             <div class="photo_aliny_vitalevny2" style="position: relative; display: inline;">
-                <img src="@/assets/images/photo_aliny_vitalevny2.png" alt="" style="position: relative; display: inline;">
+                <img src="../assets/images/Component 2.png" alt="" style="position: relative; display: inline;">
             </div>
             <div class="about_me_text">
                 Хотите получить уникальный дизайн<br>для своего дома или офиса?
@@ -349,6 +365,7 @@ export default {
     name_b: "V_celect",
     data() {
         return {
+            isMenuVisible: false,
             options: [
                 {name: 'Консультация', value:1},
                 {name: 'Полный дизайн-проект', value:2},
@@ -382,26 +399,33 @@ export default {
         };
     },
     methods: {
+        secondForward(className, offset) {
+            this.toggleMenu();
+            this.forward(className, offset);
+        },
+        toggleMenu() { // Открытие навигационного меню на телефоне
+            this.isMenuVisible = !this.isMenuVisible;
+        },
         formatPrice(service) {
             return `${service.price} ${service.value_measure}`;
         },
         getServices(){
-                fetch('http://localhost:8080/service')
-                .then(res => res.json())
-                .then(data => {
-                    this.servic = data
-                    console.log(data)
-                })
+            fetch(import.meta.env.VITE_APP_API_URL_SERVICE)
+            .then(res => res.json())
+            .then(data => {
+                this.servic = data
+                // console.log(data)
+            })
             },
         beforeMount() {
           this.getServices()
         },
         getPortfolio(){
-            fetch('http://localhost:8080/portfolio')
+            fetch(import.meta.env.VITE_APP_API_URL_PORTFOLIO)
             .then(res => res.json())
             .then(data => {
                 this.portfolio = data
-                console.log(data)
+                // console.log(data)
             })
         },
 
