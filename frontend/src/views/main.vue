@@ -5,7 +5,7 @@
         <div class="navigation_menu_top">
             <div class="logo_top" @click="forward('.main_frame', 150)">MILKOVA<br>PROJECT.RU</div>
             <div class="image_for_open_menu">
-                <img @click="toggleMenu" src="../assets/images/menu (3).png" alt="">
+                <img @click="toggleMenu" src="../assets/images/menu.png" alt="">
             </div>
             <div class="list_with_button_to_blocks_top">
                 <button @click="forward('.calculate_prices', 150)" class="button_to_prices_top">ЦЕНЫ</button>
@@ -25,12 +25,18 @@
                 <ul class="list_of_blocks">
                     <li @click="secondForward('.calculate_prices', 100)">ЦЕНЫ</li>
                     <li @click="secondForward('.about_me', 70)">ОБО МНЕ</li>
-                    <li @click="secondForward('.service', 70)">УСЛУГИ</li>
-                    <li @click="secondForward('.stages', 70)">ЭТАПЫ</li>
+                    <li @click="secondForward('.service_mobile', 70)">УСЛУГИ</li>
+                    <li @click="secondForward('.stages_mobile', 100)">ЭТАПЫ</li>
                     <li @click="secondForward('.portfolio', 70)">ПОРТФОЛИО</li>
                     <li @click="secondForward('.request', 70)">ЗАЯВКА</li>
                     <li @click="secondForward('.contacts', 70)">КОНТАКТЫ</li>
                 </ul>
+                <div class="contacts_images">
+                    <a href="https://instagram.com/alina_milkova_project"><img class="icon_instagram" src="../assets/images/inst_icon.png" alt=""></a>
+                    <a href="tel:+79159849794"><img class="icon_telephone" src="../assets/images/telephone_icon.png" alt=""></a>
+                    <a href="mailto:kalina-@mail.ru"><img class="icon_mail" src="../assets/images/mail_icon.png" alt=""></a>
+
+                </div>
         </div>
         <!-- КОНЕЦ -->
 
@@ -44,6 +50,10 @@
             <div class="second_photo_and_text">
                 <img class="second_photo" src="../assets/images/bedroom.png" alt="">
             </div>
+        </div>
+        <div class="small_section_about_me_mobile">
+            <p class="main_text_mobile">Дизайн интерьера<br>в Ярославле</p>
+            <button @click="forward('.request', 30)" class="button_for_get_consultation_mobile">Получить консультацию</button>
         </div>
         <!-- КОНЕЦ -->
 
@@ -122,8 +132,6 @@
         </div>
         <!-- КОНЕЦ -->
 
-
-
         <!-- РЕАЛИЗОВАТЬ БЛОК "УСЛУГИ" -->
         <div class="service" :style="backgroundStyle">
             <nav class="nav_service">
@@ -137,7 +145,9 @@
                         <span class="description_of_service" v-html="service.short_description"></span>
                         <div class="button_wrapper">
                             <span class="price_of_service" v-html="formatPrice(service)"></span>
-                            <button class="button" @click="showModal(service.name)">Подробнее</button>
+                            <button v-if="service.name=='Полный<br>дизайн-проект'" class="button" @click="forward('.stages', 70)">Подробнее</button>
+                            <button v-else-if="service.name=='Эскизный проект'" class="button" @click="openPdf">Подробнее</button>
+                            <button v-else class="button" @click="showModal(service.name)">Подробнее</button>
                             <div v-if="modals[service.name]" @click.self="closeModal(service.name)" class="modal-shadow">
                                 <div class="modal">
                                     <div class="modal_container">
@@ -152,6 +162,33 @@
                     <img src="@/assets/images/line.png" class="line">
                 </div>
             </nav>
+        </div>
+        
+        <div class="service_mobile">
+            <p class="title_mobile">УСЛУГИ ДИЗАЙНА</p>
+            <div class="line_container_mobile">
+                    <img src="../assets/images/Rectangle 165.png" class="line">
+            </div>
+            <div class="consultion_mobile" v-for="service in servic" :key="service.id">
+                <div class="one_service_mobile">
+                    <div class="nam_of_service_mobile" v-html="service.name"></div>
+                    <div class="description_of_service_mobile" v-html="service.short_description"></div>
+                    <div class="price_of_service_mobile" v-html="formatPrice(service)"></div>
+                    <div class="button_mobile_wrapper">
+                        <button v-if="service.name=='Полный<br>дизайн-проект'" class="button_mobile" @click="forward('.stages_mobile', 100)">Подробнее</button>
+                        <button v-else-if="service.name=='Эскизный проект'" class="button_mobile" @click="openPdf">Подробнее</button>
+                        <button v-else class="button_mobile" @click="showModal(service.name)">Подробнее</button>
+                    </div>
+                    <div v-if="modals[service.name]" @click.self="closeModal(service.name)" class="modal-shadow_mobile">
+                        <div class="modal_container_mobile">
+                            <span class="modal_text_mobile" v-html="service.long_description"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="line_container_mobile">
+                <img src="../assets/images/Rectangle 165.png" class="line">
+            </div>
         </div>
         <!-- КОНЕЦ -->
 
@@ -195,7 +232,7 @@
 
                         <h6>Визуализация</h6>
                         <p class="visualization_text">
-                            Процесс создания трехмерной модели пространства и передачи<br>его внешнего вида. Позволяет наглядно представить клиенту<br>конечный результат проекта до его реализации
+                            Процесс создания трехмерной модели пространства и передачи<br>его внешнего вида. Позволяет наглядно представить клиенту<br>конечный результат проекта до его реализации.
                         </p>
                         <img class="visualization_image" src="@/assets/images/vizualization.png" alt="">
                     </div>
@@ -205,7 +242,7 @@
 
                         <h6>Рабочая документация</h6>
                         <p class="work_documentation_text"> 
-                            Полный комплект строительных чертежей согласно списку
+                            Полный комплект строительных чертежей согласно списку.
                         </p>
                         <img class="work_documentation_image" src="@/assets/images/work_document.png" alt="">
                     </div>
@@ -229,11 +266,35 @@
                 </div>
             </div>
         </div>
+
+        <div class="stages_mobile">
+            <div class="steps_work_mobile">ЭТАПЫ РАБОТЫ</div>
+            <div v-for="(step, index) in steps" :key="index">
+                <div class="one_step" v-if="index % 2 == 0">
+                    <div class="digit_container_mobile">
+                        <div class="digit_mobile">{{ index + 1 }}</div>
+                    </div>
+                    <div class="block_of_step_left_mobile">
+                        <div class="name_of_step_mobile">{{ step.name }}</div>
+                        <div class="description_of_step_mobile">{{ step.description }}</div>
+                        <img class="img_mobile" :src="step.photo" alt="">
+                    </div>
+                </div>
+
+                <div class="one_step" v-else>
+                    <div class="block_of_step_right_mobile">
+                        <div class="name_of_step_mobile">{{ step.name }}</div>
+                        <div class="description_of_step_mobile">{{ step.description }}</div>
+                        <img class="img_mobile" :src="step.photo" alt="">
+                    </div>
+                    <div class="digit_container_mobile">
+                        <div class="digit_mobile">{{ index + 1 }}</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
         <!-- КОНЕЦ -->
-
-
-
-
 
         <!-- РЕАЛИЗОВАТЬ БЛОК "ПОРТФОЛИО" -->
         <div class="portfolio">
@@ -258,8 +319,6 @@
             </nav>
         </div>
         <!-- КОНЕЦ -->
-
-
 
         <!-- БЛОК "ЗАЯВКА"-->
         <div class="request" id="request_id" >
@@ -348,6 +407,13 @@
 <script>
 import {IMaskDirective} from 'vue-imask';
 
+
+import technicalTaskImage from '@/assets/images/technical_task.png';
+import projectFrameImage from '@/assets/images/project_frame.png';
+import vizualizationImage from '@/assets/images/vizualization.png';
+import workDocumentImage from '@/assets/images/work_document.png';
+import complectationImage from '@/assets/images/complectation.png';
+
 const imagesContext = import.meta.glob('@/assets/images/project1/*');
 
 const images = Object.keys(imagesContext).map(key => imagesContext[key]);
@@ -366,6 +432,23 @@ export default {
     data() {
         return {
             isMenuVisible: false,
+            steps: [
+                { name: 'Техническое задание',
+                  description: 'Это первая бесплатная встреча, на которой мы с вами знакомимся и обсуждаем предстоящую работу. Я рассказываю и показываю из чего состоит проект. Мы заключаем договор. Вы заполняете подробную анкету, которая будет являться техническим заданием на проектирование.', 
+                  photo: technicalTaskImage},
+                { name: 'Проектирование пространтва',
+                  description: 'После подписания договора я выполняю обмер помещения. На основании технического задания создается несколько вариантов планировок, после их обсуждения и внесения правок, мы выбираем вариант, максимально учитывающий все ваши пожелания.', 
+                  photo: projectFrameImage},
+                { name: 'Визуализация',
+                  description: 'Процесс создания трехмерной модели пространства и передачи его внешнего вида. Позволяет наглядно представить клиенту конечный результат проекта до его реализации.', 
+                  photo: vizualizationImage},
+                { name: 'Рабочая документация',
+                  description: 'Полный комплект строительных чертежей согласно списку.', 
+                  photo: workDocumentImage},
+                { name: 'Комплектация',
+                  description: 'Конечный результат этапа комплектации представляет собой таблицу со ссылками на конкретные отделочные материалы, сантехнику, мебель и декор и указанием их стоимости. Так как таблица является редактируемым документом, Вы можете самостоятельно менять позиции и четко контролировать бюджет в процессе реализации дизайн-проекта.',
+                  photo: complectationImage}
+            ],
             options: [
                 {name: 'Консультация', value:1},
                 {name: 'Полный дизайн-проект', value:2},
@@ -399,6 +482,10 @@ export default {
         };
     },
     methods: {
+        openPdf() {
+            const pdfPath = '../../public/Mini-design_project_to_define_cost.pdf';
+            window.open(pdfPath, '_blank');
+        },
         secondForward(className, offset) {
             this.toggleMenu();
             this.forward(className, offset);
