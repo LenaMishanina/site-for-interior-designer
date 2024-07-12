@@ -161,6 +161,7 @@
     }
     
     .logo_top {
+        z-index: 10000000;
         color: #a59a94;
         font-family: 'JuliusSansOne-Regular';
         font-size: 27px;
@@ -194,11 +195,15 @@
         backdrop-filter: blur(25px);
         -webkit-backdrop-filter: blur(25px);
         background-color: rgba(0, 0, 0, 0.8);
-        transition: opacity 0.5s;
+        transition: opacity 0.5s, visibility 0.5s;
+        visibility: hidden;
+        pointer-events: none;
     }
     
     .nav_menu_for_mobile.show {
         opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
     
     .logo {
@@ -207,8 +212,10 @@
         font-size: 27px;
         cursor: default;
         margin-left: 20px;
-        margin-top: 13px;
+        margin-top: 12px;
     }
+
+
     .list_of_blocks {
         display: flex;
         flex-direction: column;
@@ -218,7 +225,7 @@
         align-items: center;
         color: white;
         z-index: 10000;
-        top: 250px;
+        top: 280px;
         left: 50%;
         transform: translate(-50%, -50%);
     }
@@ -236,6 +243,31 @@
         width: 40px;
         height: 40px;
     }
+
+    .contacts_images {
+        width: 160px;
+        margin-top: 50px;
+        position: absolute;
+        display: flex;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        justify-content: space-between;
+    }
+
+    .contacts_images a {
+        all: unset;
+        cursor: pointer;
+    }
+
+    .contacts_images a:hover {
+        all: unset;
+    }
+    .icon_instagram, .icon_telephone, .icon_mail {
+        width: 35px;
+        height: 35px;
+    }
+
 
     .list_with_button_to_blocks_top {
         display: none;

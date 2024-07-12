@@ -1,3 +1,4 @@
+@media (min-width: 700px) {
 .small_section_about_me {
     display: flex;
     position: relative;
@@ -78,4 +79,48 @@
     color: #eae7de; 
     font-family: 'Bitter-Light';
     font-size: 16px;
+}
+
+.small_section_about_me_mobile {
+    display: none;
+}
+}
+
+@media (max-width: 700px) {
+    .small_section_about_me {
+        display: none;
+    }
+    .small_section_about_me_mobile {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 250px;
+    }
+    .main_text_mobile {
+        margin-top: 60px;
+        color: #eae7de;
+        font-size: 35px;
+        font-family: 'Bitter-Light';
+        text-align: center;
+    }
+    .button_for_get_consultation_mobile {
+        margin-top: 30px;
+        margin-bottom: 140px;
+        color: #eae7de; 
+        font-family: 'Bitter-Light'; 
+        font-size: 20px; 
+        width: 300px; 
+        height: 50px; 
+        background: transparent; 
+        border: 2px solid #eae7de; 
+        border-radius: 40px; 
+        cursor: pointer; 
+        transition: background-color 0.3s, color 0.3s;
+    }                
+    .button_for_get_consultation_mobile:active {
+        background-color: #721607; 
+        color: #eae7de;
+    }
 }

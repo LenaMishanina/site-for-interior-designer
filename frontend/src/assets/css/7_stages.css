@@ -1,3 +1,4 @@
+@media (min-width: 700px) {
 .global_frame {
     display: flex;
     justify-content: center;
@@ -272,4 +273,85 @@
 .complectation.show {
     opacity: 1;
     transform: translateX(0);
+}
+.stages_mobile {
+    display: none;
+}
+}
+
+@media (max-width: 700px) {
+    .stages {
+        display: none;
+    }
+
+    .stages_mobile {
+        width: 85%;
+        max-width: 500px;
+        height: auto;
+        background-color: #eae7de;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        padding: 10px 20px 20px 20px;
+        border-radius: 20px;
+    }
+
+    .steps_work_mobile {
+        width: 100%;
+        text-align: center;
+        font-family: 'Bitter-Light';
+        font-size: 32px;
+        color: #5A5148;
+    }
+
+    .one_step {
+        display: flex;
+        justify-content: space-between;
+        color: #5A5148;
+        margin-top: 20px;
+    }
+
+    .digit_mobile {
+        width: 30px;
+        font-family: 'Bitter-Light';
+        font-size: 50px;
+    }
+
+    .block_of_step_right_mobile, .block_of_step_left_mobile {
+        border: 1px solid black;
+        border-radius: 20px;
+        padding: 10px 20px 15px 20px;
+        width: 100%;
+    }
+
+    .block_of_step_left_mobile {
+        margin-left: 15px;
+    }
+
+    .block_of_step_right_mobile {
+        margin-right: 15px;
+    }
+
+    .name_of_step_mobile {
+        font-family: 'Bitter-Light';
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .description_of_step_mobile {
+        font-family: 'Bitter-Light';
+        font-size: 16px;
+    }
+
+    .img_mobile {
+        display: flex;
+        margin: 15px auto 0 auto;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+    
 }
