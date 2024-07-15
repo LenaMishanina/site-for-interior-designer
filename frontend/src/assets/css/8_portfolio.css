@@ -1,3 +1,4 @@
+@media (min-width: 700px) {
 .portfolio {
     background-color:#535353;
     font-family: 'Bitter-Light';
@@ -26,97 +27,134 @@
     pointer-events: none;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    vertical-align: middle;
-    display: inline-block;
-    border-radius: 10px;
-}
-
-.gallery > div {
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding: 20px 0;
+  }
+  
+  .photos {
     display: flex;
     justify-content: center;
-    align-items: center;
+    width: 32%;
+    box-sizing: border-box;
     overflow: hidden;
     border-radius: 20px;
-    width: 100%;
-}
-
-.gallery > div > img {
-    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .photo {
+    max-width: 100%;
     height: 100%;
-    object-fit: cover;
-    max-width: 500px;
-    border-radius: 30px;
-}
+    border-radius: 20px;
+    transition: scale 0.7s;
+    cursor: pointer;
+  }
 
-.gallery {
-    display: grid;
-    grid-gap: 25px;
-    grid-template-columns: repeat(3, minmax(auto, auto));
-    margin-left: 100px;
-    margin-right: 100px;
-    padding-top: 20px;
-}
-
-.gallery .wide {
-    grid-column: span 2;
-}
-
-.gallery .tall {
-    grid-row: span 2;
-}
-
-.gallery .big {
-    grid-column: span 2;
-    grid-row: span 2;
-}
-
-.modal_window {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.819);
-    z-index: 9999;
+  .modal_photo {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
-    animation: asd 0.25s ease-in-out none;
-}
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 100000;
+    cursor: pointer;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    opacity: 0;
+    transition: opacity 0.2s;
+    visibility: hidden;
+    pointer-events: none;
+  }
 
-@keyframes asd {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
+  .modal_photo.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: unset;
+  }
 
-.modal-image {
+  .modal-content {
+    width: 30%;
+    height: 90%;
+    border-radius: 20px;
     object-fit: cover;
-    max-width: 500px;
-    border-radius: 10px;
-    max-height: 90vh;
-    width: auto;
-    height: auto;
+  }
+
+  .photo:hover {
+    scale: 1.1;
+  }
+
+.portfolio_mobile {
+    display: none;
+}
 }
 
-.zoom-image {
-    transition: transform 0.3s;
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 10px;
-}
+@media (max-width: 700px) {
+    .portfolio {
+        display: none;
+    }
 
-.zoom-image:hover {
-    transform: scale(1.1);
-}
+    .portfolio_mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        margin: 20px auto;
+    }
 
-.modal_window img {
-    transform: none !important;
+    .text_mobile {
+        font-family: 'Bitter-Light';
+        font-size: 32px;
+        color: #eae7de;
+    }
+
+    .all_photos_mobile {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1500px;
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    .photos_mobile {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 30px;
+        border-radius: 20px;
+    }
+
+    .photo-wrapper_mobile {
+        justify-content: center;
+        width: 85%;
+        height: 450px;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        border-radius: 20px;
+    }
+
+    .photo_mobile {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: scale 0.5s;
+    }
+
+    .photo_mobile:hover {
+        scale: 1.1;
+    }
 }
