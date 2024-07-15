@@ -1,6 +1,7 @@
 @media (min-width: 700px) {
 .service {
-    width: 1660px;
+    max-width: 1800px;
+    width: 100%;
     padding-top: 40px;
     font-family: 'Bitter-Light';
     display: flex;

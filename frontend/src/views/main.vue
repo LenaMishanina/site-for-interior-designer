@@ -27,15 +27,14 @@
                     <li @click="secondForward('.about_me', 70)">ОБО МНЕ</li>
                     <li @click="secondForward('.service_mobile', 70)">УСЛУГИ</li>
                     <li @click="secondForward('.stages_mobile', 100)">ЭТАПЫ</li>
-                    <li @click="secondForward('.portfolio', 70)">ПОРТФОЛИО</li>
+                    <li @click="secondForward('.portfolio_mobile', 100)">ПОРТФОЛИО</li>
                     <li @click="secondForward('.request', 70)">ЗАЯВКА</li>
-                    <li @click="secondForward('.contacts', 70)">КОНТАКТЫ</li>
+                    <li @click="secondForward('.bottom_mobile', 70)">КОНТАКТЫ</li>
                 </ul>
-                <div class="contacts_images">
+                <div class="contacts_mobile">
                     <a href="https://instagram.com/alina_milkova_project"><img class="icon_instagram" src="../assets/images/inst_icon.png" alt=""></a>
                     <a href="tel:+79159849794"><img class="icon_telephone" src="../assets/images/telephone_icon.png" alt=""></a>
                     <a href="mailto:kalina-@mail.ru"><img class="icon_mail" src="../assets/images/mail_icon.png" alt=""></a>
-
                 </div>
         </div>
         <!-- КОНЕЦ -->
@@ -215,7 +214,7 @@
                     <div class="project_frame hidden" id="poject_fr">
                         <h2 class="project_frame_digital">2</h2>
 
-                        <h6>Проектирование пространтва</h6>
+                        <h6>Проектирование пространства</h6>
                         <p class="project_frame_text">
                              После подписания договора я выполняю обмер<br>
                              помещения. На основании технического <br>
@@ -300,23 +299,32 @@
         <div class="portfolio">
             <nav>
                 <p class="title">ПОРТФОЛИО</p>
-
                 <div class="line_container">
                     <img src="@/assets/images/line.png" class="line">
                 </div>
                 <div class="gallery">
-                    <div class="photos" v-for="image in portfolio" :key="image" @click="openModal(image.index)">
-                        <img :src="image.path" class="zoom-image" @mouseover="zoomIn" @mouseleave="zoomOut">
+                    <div class="photos" v-for="image in portfolio" :key="image">  <!-- @click="openModal(image.index)" -->
+                        <img :src="image.path" class="photo" @click="openModal(image.path)"> <!--  @mouseover="zoomIn" @mouseleave="zoomOut" -->
                     </div>
                 
-
-                    <!-- Модальное окно для отображения фото -->
-                    <div v-if="modalImage !== null" class="modal_window" @click="closeModal_img">
-                        <!-- <img :src="modalImage.url" class="modal-image"> -->
-                        <img :src="modalImage.path" class="modal-image">
+                    <div :class="['modal_photo', { show: isModalOpen }]" @click="togglePhoto">
+                        <img class="modal-content" :src="currentImage">
                     </div>
                 </div>
             </nav>
+        </div>
+        <div class="portfolio_mobile">
+            <div class="text_mobile">ПОРТФОЛИО</div>
+            <div class="line_container">
+                <img src="../assets/images/Rectangle 165.png" class="line">
+            </div>
+            <div class="all_photos_mobile">
+                <div class="photos_mobile" v-for="image in portfolio" :key="image">
+                    <div class="photo-wrapper_mobile">
+                        <img :src="image.path" class="photo_mobile">
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- КОНЕЦ -->
 
@@ -397,6 +405,24 @@
                 </p>
             </div>
         </div>
+        <div class="bottom_mobile">
+            <div class="container_logo_and_menu">
+                <div class="bottom_logo_mobile">MILKOVA<br>PROJECT.RU</div>
+                <div class="bottom_menu_mobile">
+                    <p @click="forward('.calculate_prices', 100)">ЦЕНЫ</p>
+                    <p @click="forward('.about_me', 70)">ОБО МНЕ</p>
+                    <p @click="forward('.service_mobile', 70)">УСЛУГИ</p>
+                    <p @click="forward('.stages_mobile', 100)">ЭТАПЫ</p>
+                    <p @click="forward('.portfolio_mobile', 100)">ПОРТФОЛИО</p>
+                    <p @click="forward('.request', 70)">ЗАЯВКА</p>
+                </div>
+            </div>
+            <div class="contacts_bottom_mobile">
+                <a href="https://instagram.com/alina_milkova_project"><img class="icon_instagram" src="../assets/images/inst_icon.png" alt=""></a>
+                <a href="tel:+79159849794"><img class="icon_telephone" src="../assets/images/telephone_icon.png" alt=""></a>
+                <a href="mailto:kalina-@mail.ru"><img class="icon_mail" src="../assets/images/mail_icon.png" alt=""></a>
+            </div>
+        </div>
         <!-- КОНЕЦ -->
     </div>
 </template>
@@ -432,11 +458,13 @@ export default {
     data() {
         return {
             isMenuVisible: false,
+            isModalOpen: false,
+            currentImage: null,
             steps: [
                 { name: 'Техническое задание',
                   description: 'Это первая бесплатная встреча, на которой мы с вами знакомимся и обсуждаем предстоящую работу. Я рассказываю и показываю из чего состоит проект. Мы заключаем договор. Вы заполняете подробную анкету, которая будет являться техническим заданием на проектирование.', 
                   photo: technicalTaskImage},
-                { name: 'Проектирование пространтва',
+                { name: 'Проектирование пространства',
                   description: 'После подписания договора я выполняю обмер помещения. На основании технического задания создается несколько вариантов планировок, после их обсуждения и внесения правок, мы выбираем вариант, максимально учитывающий все ваши пожелания.', 
                   photo: projectFrameImage},
                 { name: 'Визуализация',
@@ -461,7 +489,6 @@ export default {
             backgroundStyle: {
                 backgroundImage: `url(${new URL('@/assets/images/back_service.png', import.meta.url).href})`
             },        
-            modalImage: null,
             modals: {
                 consultation: false,
                 designProject: false,
@@ -482,6 +509,14 @@ export default {
         };
     },
     methods: {
+        openModal(imagePath) {
+            this.currentImage = imagePath;
+            this.isModalOpen = true;
+        },
+        closeModal() {
+            this.isModalOpen = false;
+            this.currentImage = null;
+        },
         openPdf() {
             const pdfPath = '../../public/Mini-design_project_to_define_cost.pdf';
             window.open(pdfPath, '_blank');
@@ -492,6 +527,9 @@ export default {
         },
         toggleMenu() { // Открытие навигационного меню на телефоне
             this.isMenuVisible = !this.isMenuVisible;
+        },
+        togglePhoto() { // Открытие фото при нажатии
+            this.isModalOpen = !this.isModalOpen;
         },
         formatPrice(service) {
             return `${service.price} ${service.value_measure}`;
@@ -534,12 +572,6 @@ export default {
         
         // КОНЕЦ
         //Ф-ции открытия и закрытия окна с фоткой в портфолио
-        openModal(index) {
-            this.modalImage = this.portfolio[index];
-            document.querySelectorAll('.zoom-image').forEach(image => {
-                image.style.transform = 'none';
-            });
-        },
         closeModal_img() {
             this.modalImage = null;
         },//КОНЕЦ

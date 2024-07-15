@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "serve -s dist"
   },
   "dependencies": {
     "@socheatsok78/v-inputmask": "^1.0.1",
     "bootstrap": "^5.3.3",
+    "docker": "^1.0.0",
     "inputmask": "^5.0.8",
     "maska": "^2.1.11",
     "serve": "^14.2.3",
