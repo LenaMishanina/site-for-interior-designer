@@ -57,6 +57,7 @@ hr {
 }
 
 .request_background_photo {
+    margin-top: 50px;
     width: 1650px;
     height: 750px;
 }
