@@ -138,6 +138,7 @@
     .photo-wrapper_mobile {
         justify-content: center;
         width: 85%;
+        max-width: 330px;
         height: 450px;
         position: relative;
         display: inline-block;

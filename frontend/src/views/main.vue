@@ -59,6 +59,7 @@
         <!-- РЕАЛИЗОВАТЬ БЛОК "ЦЕНЫ" -->
         <div class="calculate_prices">
             <p class="title_price">РАСЧЕТ ЦЕНЫ</p>
+
                 <div class="counting_block">
                     <div class="slider_block">
                         <p class="calc_text">
@@ -69,17 +70,17 @@
                     
                     <div class="output1">
                         <p class="text_inside_output">Полный дизайн-проект</p>
-                        <p class="total_price">
-                            От <span id="result-block1">96000</span> рублей
-                            <button @click="forward('.service', 80)" class="button_for_get_more">Подробнее</button>
-                        </p>
+                        <div class="total_price">
+                            <p class="price_container">От <span id="result-block1">96000</span> рублей</p>
+                            <button @click="forward('.service_mobile', 80)" class="button_for_get_more">Подробнее</button>
+                        </div>
                     </div>
-                    <div class="output2">
+                    <div class="output1">
                         <p class="text_inside_output">Планировочное решение</p>
-                        <p class="total_price">
-                            От <span id="result-block2">24000</span> рублей
-                            <button @click="forward('.service', 80)" class="button_for_get_more">Подробнее</button>
-                        </p>
+                        <div class="total_price">
+                            <p class="price_container">От <span id="result-block2">24000</span> рублей</p>
+                            <button @click="forward('.service_mobile', 80)" class="button_for_get_more">Подробнее</button>
+                        </div>
                     </div>
                 </div>
         </div>
@@ -98,6 +99,24 @@
                 </div>
                 <button @click="forward('.request', 30)" class="button_for_get_request">Получить консультацию</button>
             </div>
+        </div>
+        <div class="about_me_mobile">
+            <div class="group_mobile">
+                <div class="about_me_text_mobile">
+                    Хотите получить уникальный дизайн<br>для своего дома или офиса?
+                </div>
+                <div>
+                    <button @click="forward('.request', 30)" class="button_for_get_request_mobile">Получить консультацию</button>
+                </div>
+                <div class="container_for_photo_and_text_mobile">
+                    <div class="photo_aliny_vitalevny2_mobile" style="position: relative; display: inline;">
+                        <img src="../assets/images/Component 2.png" alt="" style="position: relative; display: inline; width:167px; height:217px; margin-top: 15px;">
+                    </div>
+                    <div class="light_about_me_text_mobile">Я поэтапно расскажу вам о том, как всё будет происходить от идеи до реализации.<br>Первая консультация не займет много времени.
+                    </div>
+                </div>
+            </div>
+
         </div>
         <!-- КОНЕЦ -->
 
@@ -127,6 +146,37 @@
             <div class="step_advantage">
                 <img src="@/assets/images/step6.png" alt="" style="position: relative; display: inline-block; width: 70px; height: 70px;">
                 <div class="step_text">Отвечаю на вопросы по проекту даже после завершения сотрудничества</div>
+            </div>
+        </div>
+        <div class="my_advantages_mobile">
+            <div class="title_advantages_mobile">МОИ ПРЕИМУЩЕСТВА</div>
+            <div class="adv_container">
+                <div class="step_advantage_mobile">
+                    <img src="../assets/images/step1.png" alt="">
+                    <div class="step_text_mobile">Проектирую более 12 лет</div>
+                </div>
+                <div class="step_advantage_mobile">
+                    <img src="../assets/images/step2.png" alt="">
+                    <div class="step_text_mobile">Я не завершу свою работу, пока вам не понравится результат</div>
+                </div>
+                <div class="step_advantage_mobile">
+                    <img src="../assets/images/step3.png" alt="">
+                    <div class="step_text_mobile">Закладываю в дизайн-проект только реальные товары, которые Вы легко найдете, отсканировав QR код</div>
+                </div>
+            </div>
+            <div class="adv_container">
+                <div class="step_advantage_mobile">
+                    <img src="../assets/images/step4.png" alt="">
+                    <div class="step_text_mobile">Создаю комфортное пространство для каждого члена семьи, учитывая его потребности</div>
+                </div>
+                <div class="step_advantage_mobile">
+                    <img src="../assets/images/step5.png" alt="">
+                    <div class="step_text_mobile">Даю подробное техническое задание для изготовления мебели</div>
+                </div>
+                <div class="step_advantage_mobile">
+                    <img src="../assets/images/step6.png" alt="">
+                    <div class="step_text_mobile">Отвечаю на вопросы по проекту даже после завершения сотрудничества</div>
+                </div>
             </div>
         </div>
         <!-- КОНЕЦ -->
@@ -333,7 +383,7 @@
             <div class="main_request">
                 <div class="cl" id="main_reques">
                     <div class = "main_request_correct">
-                        <h1>Оставить заявку</h1>
+                        <h1>Заявка</h1>
                         <div class="for_inputs">
                             <!--onsubmit="submitForm(event)"-->
                             <form action=""  class="form" id="add_form" >
@@ -381,6 +431,42 @@
                 <hr>
                 <div class="for_background">
                     <img class="request_background_photo" @click.self="areaOpsionsVisible = false" src="@/assets/images/photo_laptop_b.png">
+                </div>
+            </div>
+        </div>
+        <div class="request_mobile">
+            <div class = "main_request_correct">
+                <h1>Заявка</h1>
+                <div class="for_inputs">
+                    <!--onsubmit="submitForm(event)"-->
+                    <form action=""  class="form" id="add_form" >
+                        <div class="name_config">
+                            <p class="your_name">Ваше имя:</p>
+                            <input type="text" id="name" name="name" class="name_contact" placeholder="Имя" autocomplete="off">
+                            <label class="error_label">Введите имя</label>
+                        </div>
+                        <div class="number_config">
+                            <p class="numper_phone">Номер телефона:</p>
+                            <input type="phone" name="name" id="phone" class="name_contact" v-imask="phoneNumberMask" @keypress="isNumber" placeholder="+7 (***) ***-**-**" autocomplete="off">
+                            <label class="error_label">Введите номер телефона</label>
+                        </div>
+                        <div class="celect_config">
+                            <p class="celect_service">Выбрать услугу:</p>
+                            <div class="v_celect" id="v_celect" @click="areaOpsionsVisible = !areaOpsionsVisible">
+                                <div class="v_select_container">
+                                    <p class="titles" id="titles">{{ selected }}</p>
+                                    <img class="arrow_image" :src="areaOpsionsVisible ? '../src/assets/images/arrow_up.png' : '../src/assets/images/arrow.png'"  @click="areaOpsionsVisible = !areaOpsionsVisible">
+                                </div>
+                                <div class="options" v-if="areaOpsionsVisible">
+                                    <p class="option" v-for="option in options" :key="option.value" @click="SelectOption(option)">{{ option.name }}</p>
+                                </div>
+                            </div>
+                            <label class="error_label_select" v-if="!areaOpsionsVisible" >Выберите услугу</label>
+                        </div>
+                        <div class="req_button_container">
+                            <button type="submit" class="button_push_request" v-if="!iSvisible">Оставить заявку</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

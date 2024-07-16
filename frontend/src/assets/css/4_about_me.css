@@ -1,3 +1,4 @@
+@media (min-width: 700px) {
 .about_me {
     position: relative;
     text-align: center; 
@@ -52,4 +53,82 @@
     font-weight: 100; 
     color: #eae7de; 
     background-color: transparent; 
+}
+
+.about_me_mobile {
+    display: none;
+}
+}
+
+@media (max-width: 700px) {
+
+    .about_me {
+      display: none;
+    }
+  
+    .about_me_mobile{
+      margin: 15px auto;
+      display: flex;
+      justify-content: center;
+      width: 90%;
+      max-width: 500px;
+    }
+  
+    .group_mobile{
+      display: column;
+    }
+  
+    .about_me_text_mobile{
+      display: flex;
+      color: #eae7de; 
+      font-family: 'Bitter-Light'; 
+      font-size: large; 
+      font-weight: bolder;
+      font-size: 18px; 
+      text-align: left; 
+      margin-left: 30px;
+      justify-content: start;
+    }
+  
+    .button_for_get_request_mobile{
+      color: #eae7de; 
+      font-family: 'Bitter-Light'; 
+      font-size: 15px; 
+      width: 199px; 
+      height: 35.1px; 
+      background: transparent; 
+      border: 2px solid #eae7de; 
+      margin-top: 15px;
+      margin-left: 150px;
+      border-radius: 30px; 
+      transition: background-color 0.3s, color 0.3s;
+      cursor: pointer;
+    }
+  
+    .button_for_get_request_mobile:hover{ 
+      background-color: #721607; 
+      color: #eae7de; 
+    } 
+  
+    .button_for_get_request_mobile:active{ 
+      transition: background-color 0.001s, color 0.001s; 
+      font-weight: 100; 
+      color: #eae7de; 
+      background-color: transparent; 
+    }
+  
+    .light_about_me_text_mobile{
+      display: flex;
+      color: #eae7de; 
+      font-family: 'Bitter-Light'; 
+      margin: 0 10px 0 20px;
+      font-size: 13px; 
+      font-weight: lighter; 
+    }
+
+    .container_for_photo_and_text_mobile {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 }

@@ -1,3 +1,4 @@
+@media (min-width: 700px) {
 .request {
     position: relative;
     margin-top: 5px;
@@ -18,6 +19,7 @@
     width: 335px;
     border-top: 1px solid white;
 }
+
 hr {
     position: absolute;
     margin-top: 170px;
@@ -74,9 +76,6 @@ hr {
     margin-left: 950px;
 }
 
-
-
-
 .button_push_request {
     display: block;
     font-family: 'Bitter-Light';
@@ -110,14 +109,11 @@ hr {
 .main_request_correct h1 {
     font-family: 'Bitter-Light';
     margin-top: 15px;
-    margin-left: 75px;
     font-size: 50px;
     color: rgba(0, 0, 0, 0.75);
     text-align: center;
-    margin-left: 20px;
     font-weight:100;
 }
-
 
 .name_config  {
     margin-top: 10px;
@@ -126,23 +122,23 @@ hr {
 .name_config label{
     opacity: 0;
 }
-.name_config.error label{
 
+.name_config.error label{
     opacity: 1;
 }
 
 .number_config  {
     margin-top: 30px;
 }
+
 .number_config  label{
-    
     opacity: 0;
 }
+
 .number_config.error label{
     position: relative;
     opacity: 1;
 }
-
 
 .celect_config  {
     margin-top: 30px;
@@ -163,13 +159,10 @@ hr {
     margin-top: 10px;
     background-color: #F0F0F0;
     color: #000;
-
 }
-
 
 .main_request_correct {
     margin-left: 20px;
-    
 }
 
 .for_inputs {
@@ -212,7 +205,6 @@ input[type=checkbox] {
      width: 15px;
     }
 
-
 .v_celect {
     position: relative;
     font-family: 'Bitter-Light';
@@ -232,10 +224,9 @@ input[type=checkbox] {
     margin-top: 15px;
     font-size: 35px;
     color: #b5b5b5;
-
-
 }
-.options p{
+
+.options p {
     padding-left: 20px;
     width: 500px;
     height: 35px;
@@ -246,11 +237,11 @@ input[type=checkbox] {
     color: #646464;
     cursor: default;
 }
+
 .options {
     position: absolute;
     margin-top: 60px;
     margin-left: -25px;
-
 }
 
 .options p:hover {
@@ -301,4 +292,164 @@ input[type=checkbox] {
 .cl.show {
     opacity: 1;
     transform: translateX(0);
+}
+
+.request_mobile {
+    display: none;
+}
+}
+
+@media (max-width: 700px) {
+    .request {
+        display: none;
+    }
+
+    .request_mobile {
+        width: 90%;
+        max-width: 400px;
+        height: 450px;
+        margin: 0 auto 40px auto;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 20px;
+        padding: 20px;
+        font-family: 'Bitter-Light';
+    }
+
+    .request_mobile h1 {
+        color: #333;
+        font-size: 32px;
+        font-weight: 100;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .name_config {
+        margin-bottom: 5px;
+    }
+
+    .your_name {
+        color: #333;
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .name_contact {
+        width: 100%;
+        height: 37px;
+        font-family: 'Bitter-Light';
+        font-size: 18px;
+        padding: 5px 10px;
+        border: unset;
+        border-radius: 10px;
+    }
+
+    .name_config label{
+        opacity: 0;
+    }
+
+    .name_config.error label{
+        opacity: 1;
+    }
+
+    .error_label {
+        position: relative;
+        color: rgb(233, 0, 0);
+        margin-left: 20px;
+        font-size: 20px;
+    }
+
+    .number_config {
+        margin-bottom: 5px;
+    }
+
+    .numper_phone {
+        color: #333;
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .number_config  label{
+        opacity: 0;
+    }
+    
+    .number_config.error label{
+        position: relative;
+        opacity: 1;
+    }
+
+    .celect_service {
+        color: #333;
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .v_select_container {
+        width: 100%;
+        height: 37px;
+        background-color: white;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .error .v_celect{
+        border: 1px solid red;
+    }
+    
+    .celect_config label {
+        color: rgb(233, 0, 0);
+        margin-left: 25px;
+        font-size: 20px;
+        opacity: 0;
+    }
+    .celect_config.error label {
+        position: relative;
+        margin-top: 3px;
+        opacity: 1;
+    }
+
+    .titles {
+        margin-left: 10px;
+    }
+
+    .arrow_image {
+        width: 35px;
+        float: right;
+        margin-right: 10px;
+    }
+
+    .options {
+        margin-bottom: 2px;
+        position: absolute;
+    }
+
+    .option {
+        width: 100%;
+        background-color: white;
+        border: 1px solid #333;
+        border-radius: 5px;
+        margin-bottom: 1px;
+        padding: 2px 10px 2px 10px;
+    }
+
+    .req_button_container {
+        display: flex;
+        justify-content: center;
+        margin-top: 23px;
+    }
+    
+    .button_push_request {
+        font-family: 'Bitter-Light';
+        color: #333;
+        font-size: 15px;
+        font-weight: 100;
+        width: 60%;
+        max-width: 300px;
+        height: 35px;
+        background: transparent;
+        border: 2px solid #333;
+        border-radius: 20px;
+        cursor: pointer;
+    }
 }

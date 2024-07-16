@@ -293,6 +293,10 @@ a:active {
         transition: background-color 0.3s, color 0.3s, border 0.3s;
     }
 
+    .button_mobile:hover {
+        background-color: #721607; 
+    }
+
     .modal-shadow_mobile {
         display: flex;
         justify-content: center;
