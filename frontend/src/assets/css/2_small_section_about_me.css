@@ -119,7 +119,7 @@
         cursor: pointer; 
         transition: background-color 0.3s, color 0.3s;
     }                
-    .button_for_get_consultation_mobile:active {
+    .button_for_get_consultation_mobile:hover {
         background-color: #721607; 
         color: #eae7de;
     }
