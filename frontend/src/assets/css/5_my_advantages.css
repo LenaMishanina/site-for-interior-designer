@@ -1,3 +1,4 @@
+@media (min-width: 700px) {
 .my_advantages { 
     width: 1000px; 
     height: 600px;
@@ -39,3 +40,59 @@
     margin-top: 15px; 
     font-family: 'Bitter-Light'; 
 }
+
+.my_advantages_mobile {
+    display: none;
+}
+}
+
+@media (max-width: 700px) {
+
+    .my_advantages { 
+      display: none;
+    } 
+  
+    .my_advantages_mobile{
+      width: 90%;
+      max-width: 500px;
+      background-color: #eae7de;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      padding: 10px 20px;
+    }
+
+    .title_advantages_mobile {
+        font-family: 'Bitter-Light';
+        font-size: 23px;
+    }
+
+    .adv_container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .step_advantage_mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+    }
+
+    .step_advantage_mobile img {
+        width: 40px;
+        margin-bottom: 10px;
+    }
+
+    .step_text_mobile {
+        font-family: 'Bitter-Light';
+        font-size: 7px;
+        font-weight: 600;
+        text-align: center;
+    }
+}
+  
