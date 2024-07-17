@@ -1,18 +1,15 @@
 package com.malina.siteForInteriorDesigner.controller;
 
 import com.malina.siteForInteriorDesigner.entity.PortfolioEntity;
-import com.malina.siteForInteriorDesigner.entity.ServiceEntity;
 import com.malina.siteForInteriorDesigner.service.PortfolioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
@@ -20,6 +17,8 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:5173")
 public class PortfolioController {
     private final PortfolioService service;
+    @Value("${file.upload-dir}")
+    private String uploadDir;
     @Autowired
     public PortfolioController(PortfolioService service) {
         this.service = service;
@@ -29,7 +28,10 @@ public class PortfolioController {
     public String uploadPhoto(@RequestParam("file") MultipartFile file) throws IOException {
         String fileName = file.getOriginalFilename();
         System.out.println("FILENAME : " + fileName);
-       // Files.copy(file.getInputStream(), Paths.get("C:\\Users\\misha\\Documents\\GitHub\\site-for-interior-designer\\frontend\\src\\assets\\images\\" + fileName), StandardCopyOption.REPLACE_EXISTING);
+
+        Path path = Paths.get(uploadDir + fileName);
+//        Files.createDirectories(path.getParent());
+        Files.write(path, file.getBytes());
 
         PortfolioEntity photo = new PortfolioEntity();
         photo.setPath("../src/assets/images/" + fileName);
