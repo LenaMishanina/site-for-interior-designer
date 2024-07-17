@@ -18,17 +18,17 @@
             </div>
         </div>
         <div :class="['nav_menu_for_mobile', { show: isMenuVisible }]">
-                <div class="logo">MILKOVA<br>PROJECT.RU</div>
+                <div class="logo" @click="forward('.small_section_about_me_mobile', 200)">MILKOVA<br>PROJECT.RU</div>
                 <div class="container_for_double_arrow">
                     <img @click="toggleMenu" class="double_arrow" src="../assets/images/double_arrow.png">
                 </div>
                 <ul class="list_of_blocks">
                     <li @click="secondForward('.calculate_prices', 100)">ЦЕНЫ</li>
-                    <li @click="secondForward('.about_me', 70)">ОБО МНЕ</li>
+                    <li @click="secondForward('.about_me_mobile', 100)">ОБО МНЕ</li>
                     <li @click="secondForward('.service_mobile', 70)">УСЛУГИ</li>
                     <li @click="secondForward('.stages_mobile', 100)">ЭТАПЫ</li>
                     <li @click="secondForward('.portfolio_mobile', 100)">ПОРТФОЛИО</li>
-                    <li @click="secondForward('.request', 70)">ЗАЯВКА</li>
+                    <li @click="secondForward('.request_mobile', 100)">ЗАЯВКА</li>
                     <li @click="secondForward('.bottom_mobile', 70)">КОНТАКТЫ</li>
                 </ul>
                 <div class="contacts_mobile">
@@ -400,8 +400,8 @@
                                 </div>
                                 <div class="celect_config">
                                     <p class="celect_service">Выбрать услугу:</p>
-                                    <div class="v_celect" id="v_celect" @click="areaOpsionsVisible = !areaOpsionsVisible"  >
-                                        <img class="arrow_image" :src="areaOpsionsVisible ? '../src/assets/images/arrow_up.png' : '../src/assets/images/arrow.png'"  @click="areaOpsionsVisible = !areaOpsionsVisible">
+                                    <div class="v_celect" id="v_celect" @click="areaOpsionsVisible = !areaOpsionsVisible">
+                                        <img class="arrow_image" :src="areaOpsionsVisible ? '../src/assets/images/arrow_up.png' : '../src/assets/images/arrow.png'">
                                         <p class="titles" id="titles">
                                         {{ selected }}
                                         </p>
@@ -411,7 +411,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <label class="error_label_select" v-if="!areaOpsionsVisible" >Выберите услугу</label>
+                                    <label class="error_label_select" v-if="!areaOpsionsVisible">Выберите услугу</label>
 
                                 </div>
 
@@ -454,7 +454,7 @@
                             <p class="celect_service">Выбрать услугу:</p>
                             <div class="v_celect" id="v_celect" @click="areaOpsionsVisible = !areaOpsionsVisible">
                                 <div class="v_select_container">
-                                    <p class="titles" id="titles">{{ selected }}</p>
+                                    <p class="titles" id="titles" @click="areaOpsionsVisible = !areaOpsionsVisible">{{ selected }}</p>    
                                     <img class="arrow_image" :src="areaOpsionsVisible ? '../src/assets/images/arrow_up.png' : '../src/assets/images/arrow.png'"  @click="areaOpsionsVisible = !areaOpsionsVisible">
                                 </div>
                                 <div class="options" v-if="areaOpsionsVisible">
@@ -480,7 +480,7 @@
                 <button @click="forward('.service', 80)" class="button_to_services_bottom">УСЛУГИ</button>
                 <button @click="forward('.stages', 80)" class="button_to_stages_bottom">ЭТАПЫ</button>
                 <button @click="forward('.portfolio', 80)" class="button_to_portfolio_bottom">ПОРТФОЛИО</button>
-                <button @click="forward('.request', 30)" class="button_to_request_bottom">ЗАЯВКА</button>
+                <button @click="forward('.request_mobile', 30)" class="button_to_request_bottom">ЗАЯВКА</button>
             </div>
             <div class="contacts">
                 <p class="information">
@@ -493,14 +493,14 @@
         </div>
         <div class="bottom_mobile">
             <div class="container_logo_and_menu">
-                <div class="bottom_logo_mobile">MILKOVA<br>PROJECT.RU</div>
+                <div class="bottom_logo_mobile" @click="forward('.small_section_about_me_mobile', 200)">MILKOVA<br>PROJECT.RU</div>
                 <div class="bottom_menu_mobile">
                     <p @click="forward('.calculate_prices', 100)">ЦЕНЫ</p>
-                    <p @click="forward('.about_me', 70)">ОБО МНЕ</p>
+                    <p @click="forward('.about_me_mobile', 100)">ОБО МНЕ</p>
                     <p @click="forward('.service_mobile', 70)">УСЛУГИ</p>
                     <p @click="forward('.stages_mobile', 100)">ЭТАПЫ</p>
                     <p @click="forward('.portfolio_mobile', 100)">ПОРТФОЛИО</p>
-                    <p @click="forward('.request', 70)">ЗАЯВКА</p>
+                    <p @click="forward('.request_mobile', 100)">ЗАЯВКА</p>
                 </div>
             </div>
             <div class="contacts_bottom_mobile">
@@ -604,7 +604,7 @@ export default {
             this.currentImage = null;
         },
         openPdf() {
-            const pdfPath = '../../public/Mini-design_project_to_define_cost.pdf';
+            const pdfPath = import.meta.env.VITE_APP_API_URL_PDF;
             window.open(pdfPath, '_blank');
         },
         secondForward(className, offset) {
@@ -670,8 +670,8 @@ export default {
         },
         
         SelectOption(option) {
-            this.selected = option.name
-            areaOpsionsVisible =!this.areaOpsionsVisible;
+            this.areaOpsionsVisible = true;
+            this.selected = option.name;
         },
         isNumber(e) {
             let regex = /[0-9]/
