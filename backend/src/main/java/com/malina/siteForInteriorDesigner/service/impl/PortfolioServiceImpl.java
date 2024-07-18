@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -20,9 +22,19 @@ public class PortfolioServiceImpl implements PortfolioService {
     }
 
     @Override
+    public Integer getLastIndex() {
+        return repository.findAll().size() - 1;
+    }
+
+    @Override
     @ResponseBody
     public List<PortfolioEntity> findAllImage() {
         return repository.findAll();
+    }
+
+    @Override
+    public List<PortfolioEntity> saveAllImage(List<PortfolioEntity> images) {
+        return repository.saveAll(images);
     }
 
     @Override
