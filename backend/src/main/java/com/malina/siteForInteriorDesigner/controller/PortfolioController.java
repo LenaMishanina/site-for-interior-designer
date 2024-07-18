@@ -44,17 +44,6 @@ public class PortfolioController {
 
     @GetMapping("/portfolio")
     public List<PortfolioEntity> getPortfolio() {
-//        PortfolioEntity img1 = new PortfolioEntity(
-//                Long.valueOf(1),
-//                "../src/assets/images/complectation.png",
-//                0
-//        );
-//        PortfolioEntity img2 = new PortfolioEntity(
-//                Long.valueOf(2),
-//                "../src/assets/images/project_frame.png",
-//                1
-//        );
-//        return Arrays.asList(img1, img2);
         List<PortfolioEntity> images = service.findAllImage();
         images.stream()
                 .sorted(Comparator.comparingInt(PortfolioEntity::getIndex))
