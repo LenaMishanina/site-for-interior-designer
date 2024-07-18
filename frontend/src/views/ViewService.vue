@@ -6,16 +6,16 @@
           <div class="container">
               <div class="row">
                   <div class="col-md-12">
-                      <h1 class="text-center">View Service</h1>
+                      <h1 class="text-center">Услуги</h1>
                       <table class="table table-striped">
                           <thead>
                             <tr>
                               <th scope="col">Id</th>
-                              <th scope="col">Name</th>
-                              <th scope="col">Short Description</th>
-                              <th scope="col">Long Description</th>
-                              <th scope="col">Price</th>
-                              <th scope="col">Value Measure</th>
+                              <th scope="col">Название</th>
+                              <th scope="col">Видимое описание</th>
+                              <th scope="col">Скрытое описание</th>
+                              <th scope="col">Стоимость</th>
+                              <th scope="col">Ед. изм. стоимости</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -27,8 +27,8 @@
                               <td>{{service.price}}</td>
                               <td>{{service.value_measure}}</td>
                               <td>
-                                <a class="btn btn-primary" :href="`/admin/service/edit/${service.id}`">Edit</a>
-                                <button class="btn btn-danger mx-2" @click="deleteService(service.id)">Delete</button>
+                                <a class="btn btn-primary" :href="`/admin/service/edit/${service.id}`">Редактировать</a>
+                                <button class="btn btn-danger mx-2" @click="deleteService(service.id)">Удалить</button>
                               </td>
                             </tr>
                           </tbody>

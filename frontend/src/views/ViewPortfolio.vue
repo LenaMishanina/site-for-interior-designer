@@ -10,13 +10,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center">View Portfolio</h1>
+                    <h1 class="text-center">Портфолио</h1>
                     <table class="table table-striped">
                         <thead>
                           <tr>
                             <th scope="col">Id</th>
-                            <th scope="col">Path</th>
-                            <th scope="col">Index</th>
+                            <th scope="col">Путь к файлу</th>
+                            <th scope="col">Индекс</th>
                             <!-- <th scope="col">Image</th> -->
                           </tr>
                         </thead>
@@ -26,8 +26,7 @@
                             <td>{{image.path}}</td>
                             <td>{{image.index}}</td>
                             <td>
-                                <!-- <a class="btn btn-primary" :href="`/admin/portfolio/edit/${image.id}`">Edit</a> -->
-                                <button class="btn btn-danger mx-2" @click="deleteImage(image.id)">Delete</button>
+                                <button class="btn btn-danger mx-2" @click="deleteImage(image.id)">Удалить</button>
                             </td>
                           </tr>
                         </tbody>
