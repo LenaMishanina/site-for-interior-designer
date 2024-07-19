@@ -8,8 +8,10 @@ import java.io.IOException;
 import java.util.List;
 
 public interface PortfolioService {
-    public List<PortfolioEntity> findAllImage();
-    public PortfolioEntity addImage(PortfolioEntity image);
+    Integer getLastIndex();
+    List<PortfolioEntity> findAllImage();
+    List<PortfolioEntity> saveAllImage(List<PortfolioEntity> images);
+    PortfolioEntity addImage(PortfolioEntity image);
     PortfolioEntity getImageById(long id);
     void deleteImage(long id);
     PortfolioEntity updateImage(PortfolioEntity image);
