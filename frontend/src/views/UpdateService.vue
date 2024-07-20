@@ -48,7 +48,7 @@
 
 <script>
 import Navbar from '../components/Navbar.vue';
-import '../assets/js/bootstrap.min.js';
+// import '../assets/js/bootstrap.min.js';
 
 export default {
   name: 'UpdateService',
@@ -72,16 +72,15 @@ export default {
   
   methods: {
       getService(){
-          fetch(`http://localhost:8080/service/${this.$route.params.id}`)
+          fetch(`${import.meta.env.VITE_APP_API_URL_SERVICE}/${this.$route.params.id}`)
           .then(res => res.json())
           .then(data => {
               this.service = data;
-              console.log(this.service);
           })
 
       },
       updateService(){
-          fetch(`http://localhost:8080/service`, {
+          fetch(import.meta.env.VITE_APP_API_URL_SERVICE, {
               method: 'PUT',
               headers: {
                   'Content-Type': 'application/json'
@@ -89,7 +88,6 @@ export default {
               body: JSON.stringify(this.service)
           })
           .then(data => {
-              console.log(data);
               this.$router.push('/admin/service');
           })
       }

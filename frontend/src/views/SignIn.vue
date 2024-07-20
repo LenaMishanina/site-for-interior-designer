@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import '../assets/js/bootstrap.min.js';
+// import '../assets/js/bootstrap.min.js';
 import Navlogin from '../components/Navlogin.vue';
 import { reactive } from "vue"
 import axios from "axios"
@@ -46,7 +46,7 @@ setup() {
 
     const submit = async () => {
         try {
-        const response = await axios.post('http://localhost:8080/api/login', data, {
+        const response = await axios.post(import.meta.env.VITE_APP_API_URL_SIGNIN, data, {
             withCredentials: true
         });
         axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.token}`;

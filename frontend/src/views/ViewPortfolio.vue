@@ -8,7 +8,7 @@
                   <table class="table">
                       <thead>
                         <tr>
-                          <th scope="col">Id</th>
+                          <!-- <th scope="col">Id</th> -->
                           <th scope="col">Путь к файлу</th>
                           <th scope="col">Индекс</th>
                           <th scope="col">Действие</th>
@@ -17,7 +17,7 @@
                       </thead>
                       <tbody>
                         <tr v-for="image in portfolio" :key="image.id">
-                          <th scope="row">{{image.id}}</th>
+                          <!-- <th scope="row">{{image.id}}</th> -->
                           <td>{{image.path}}</td>
                           <td>{{image.index}}</td>
                           <td>
@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import '../assets/js/bootstrap.min.js';
+// import '../assets/js/bootstrap.min.js';
 import Navbar from '../components/Navbar.vue'
 
 export default {
@@ -57,15 +57,13 @@ export default {
           .then(res => res.json())
           .then(data => {
               this.portfolio = data
-              console.log(data)
           })
       },
       deleteImage(id){
-        fetch(`http://localhost:8080/portfolio/${id}`, {
+        fetch(`${import.meta.env.VITE_APP_API_URL_PORTFOLIO}/${id}`, {
             method: 'DELETE'
         })
         .then(data => {
-            console.log(data)
             this.getPortfolio()
         })
       },
@@ -74,16 +72,15 @@ export default {
     const formData = new FormData();
     formData.append('file', file);
 
-    fetch('http://localhost:8080/portfolio/uploadPhoto', {
+    fetch(import.meta.env.VITE_APP_API_URL_UPLOADPHOTO, {
       method: 'POST',
       body: formData
     })
     .then(response => {
       if (response.ok) {
-        console.log('Photo uploaded successfully');
         this.getPortfolio();
       } else {
-        console.error('Failed to upload photo');
+        // console.error('Failed to upload photo');
       }
     })
   }

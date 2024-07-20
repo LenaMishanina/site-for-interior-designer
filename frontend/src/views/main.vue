@@ -63,22 +63,22 @@
                     <div class="counting_block">
                         <div class="slider_block">
                             <p class="calc_text">
-                                Площадь помещения <span id="rangeValue"> 80</span> м²
+                                Площадь помещения <span class="rangeValue"> 80</span> м²
                             </p> 
-                            <input class="slider" type="range" min="15" max="300" value="80" oninput="rangeValue.innerText = this.value">
+                            <input class="slider" type="range" min="15" max="300" value="80" oninput="document.querySelector('.rangeValue').innerText = this.value">
                         </div>
                         
                         <div class="output1">
                             <p class="text_inside_output">Полный дизайн-проект</p>
                             <div class="total_price">
-                                <p class="price_container">От <span id="result-block1">96000</span> рублей</p>
+                                <p class="price_container">От <span class="result-block1">96000</span> рублей</p>
                                 <button @click="forward('.service', 80)" class="button_for_get_more">Подробнее</button>
                             </div>
                         </div>
                         <div class="output1">
                             <p class="text_inside_output">Планировочное решение</p>
                             <div class="total_price">
-                                <p class="price_container">От <span id="result-block2">24000</span> рублей</p>
+                                <p class="price_container">От <span class="result-block2">24000</span> рублей</p>
                                 <button @click="forward('.service', 80)" class="button_for_get_more">Подробнее</button>
                             </div>
                         </div>
@@ -90,22 +90,22 @@
                     <div class="counting_block">
                         <div class="slider_block">
                             <p class="calc_text">
-                                Площадь помещения <span id="rangeValue"> 80</span> м²
+                                Площадь помещения <span class="rangeValue1"> 80</span> м²
                             </p> 
-                            <input class="slider" type="range" min="15" max="300" value="80" oninput="rangeValue.innerText = this.value">
+                            <input class="slider1" type="range" min="15" max="300" value="80" oninput="document.querySelector('.rangeValue1').innerText = this.value">
                         </div>
                         
                         <div class="output1">
                             <p class="text_inside_output">Полный дизайн-проект</p>
                             <div class="total_price">
-                                <p class="price_container">От <span id="result-block1">96000</span> рублей</p>
+                                <p class="price_container">От <span class="result-block3">96000</span> рублей</p>
                                 <button @click="forward('.service_mobile', 50)" class="button_for_get_more">Подробнее</button>
                             </div>
                         </div>
                         <div class="output1">
                             <p class="text_inside_output">Планировочное решение</p>
                             <div class="total_price">
-                                <p class="price_container">От <span id="result-block2">24000</span> рублей</p>
+                                <p class="price_container">От <span class="result-block4">24000</span> рублей</p>
                                 <button @click="forward('.service_mobile', 50)" class="button_for_get_more">Подробнее</button>
                             </div>
                         </div>
@@ -680,10 +680,17 @@
             this.getPortfolio();
             document.querySelector('.slider').addEventListener('input', function() {
                 let value = this.value;
-                document.querySelector('#result-block1').innerText = value * 1200;
-                document.querySelector('#result-block2').innerText = value * 300;
+                document.querySelector('.result-block1').innerText = value * 1200;
+                document.querySelector('.result-block2').innerText = value * 300;
+                document.querySelector('.result-block3').innerText = value * 1200;
+                document.querySelector('.result-block4').innerText = value * 300;
             });
 
+            document.querySelector('.slider1').addEventListener('input', function() {
+                let value = this.value;
+                document.querySelector('.result-block3').innerText = value * 1200;
+                document.querySelector('.result-block4').innerText = value * 300;
+            });
             // Валидация для заявки
 
 
@@ -741,15 +748,11 @@
                     removeForInputError(input)
                     if (input.id === 'phone' && input.value.length < 18)  {
                         createForInputError(input, 'You need to enter text in this field');
-                        console.log('PEDRO');
                         result = false;
                     } else if (input.id === 'name' && input.value === "") {
-                        console.log('Error');
                         createForInputError(input, 'You need to enter text in this field');
                         result = false;
                     }
-
-                    console.log(input);
                 }
                 return result
             }
@@ -769,13 +772,12 @@
                     Subject : "Заявка с сайта",
                     Body:  document.getElementById('name').value + '\n' + document.getElementById('phone').value + '\n' + document.getElementById('titles').textContent
                 }).then(
-                    message => alert(message)
+                    alert('Заявка успешно отправлена!')
                 );
                 clearRequest(this);
 
-    
+                // alert('Заявка успешно отправлена!')
                 return true;
-                    //alert('Заявка успешно отправлена!')
                 }
             })
 

@@ -15,6 +15,8 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:5173")
+@RequestMapping("/api")
+
 public class PortfolioController {
     private final PortfolioService service;
     @Value("${file.upload-dir}")
@@ -29,8 +31,8 @@ public class PortfolioController {
         String fileName = file.getOriginalFilename();
         System.out.println("FILENAME : " + fileName);
 
-        Path path = Paths.get(uploadDir + fileName);
-//        Files.createDirectories(path.getParent());
+        Path path = Paths.get(uploadDir + "/" + fileName);
+        Files.createDirectories(path.getParent());
         Files.write(path, file.getBytes());
 
         PortfolioEntity photo = new PortfolioEntity();

@@ -9,7 +9,7 @@
                   <table class="table">
                       <thead>
                         <tr>
-                          <th scope="col">Id</th>
+                          <!-- <th scope="col">Id</th> -->
                           <th scope="col">Название</th>
                           <th scope="col" style="width: 300px">Видимое<br>описание</th>
                           <th scope="col" style="width: 500px">Скрытое описание</th>
@@ -20,7 +20,7 @@
                       </thead>
                       <tbody>
                         <tr class="table_service" v-for="service in services" :key="service.id">
-                          <th scope="row" class="id">{{service.id}}</th>
+                          <!-- <th scope="row" class="id">{{service.id}}</th> -->
                           <td class="name" v-html="service.name"></td>
                           <td class="short_description" v-html="service.short_description"></td>
                           <td class="long_description" v-html="service.long_description"></td>
@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import '../assets/js/bootstrap.min.js';
+// import '../assets/js/bootstrap.min.js';
 import Navbar from '../components/Navbar.vue'
 
 export default {
@@ -63,15 +63,13 @@ export default {
         .then(res => res.json())
         .then(data => {
             this.services = data
-            console.log(data)
         })
     },
     deleteService(id){
-      fetch(`http://localhost:8080/service/${id}`, {
+      fetch(`${import.meta.env.VITE_APP_API_URL_SERVICE}/${id}`, {
           method: 'DELETE'
       })
       .then(data => {
-          console.log(data)
           this.getServices()
       })
     }
