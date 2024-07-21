@@ -129,10 +129,10 @@
                     <img src="../assets/images/Component 2.png" alt="" style="position: relative; display: inline;">
                 </div>
                 <div class="about_me_text">
-                    Хотите получить уникальный дизайн<br>для своего дома или офиса?
-                    <div class="light_about_me_text">Я поэтапно расскажу вам о том как всё будет происходить<br>
-                    от идеи до реализации<br>
-                    Первая консультация не займет много времени
+                    Меня зовут Алина Милкова<br>Я дизайнер интерьера с высшим строительным образованием
+                    <div class="light_about_me_text">
+                    Я поэтапно расскажу вам о том, как всё будет происходить<br>от идеи до реализации.<br>
+                    Первая консультация бесплатная и не займет много времени.
                     </div>
                     <button @click="forward('.request', 30)" class="button_for_get_request">Получить консультацию</button>
                 </div>
@@ -140,7 +140,7 @@
             <div class="about_me_mobile">
                 <div class="group_mobile">
                     <div class="about_me_text_mobile">
-                        Хотите получить уникальный дизайн<br>для своего дома или офиса?
+                        Меня зовут Алина Милкова<br>Я дизайнер интерьера с высшим строительным образованием
                     </div>
                     <div>
                         <button @click="forward('.request', 100)" class="button_for_get_request_mobile">Получить консультацию</button>
@@ -149,7 +149,7 @@
                         <div class="photo_aliny_vitalevny2_mobile" style="position: relative; display: inline;">
                             <img src="../assets/images/Component 2.png" alt="" style="position: relative; display: inline; width:167px; height:217px; margin-top: 15px;">
                         </div>
-                        <div class="light_about_me_text_mobile">Я поэтапно расскажу вам о том, как всё будет происходить от идеи до реализации.<br>Первая консультация не займет много времени.
+                        <div class="light_about_me_text_mobile">Я поэтапно расскажу вам о том, как всё будет происходить от идеи до реализации.<br>Первая консультация бесплатная и не займет много времени.
                         </div>
                     </div>
                 </div>
@@ -232,7 +232,6 @@
                             <div class="button_wrapper">
                                 <span class="price_of_service" v-html="formatPrice(service)"></span>
                                 <button v-if="service.name=='Полный<br>дизайн-проект'" class="button" @click="forward('.stages', 70)">Подробнее</button>
-                                <button v-else-if="service.name=='Эскизный проект'" class="button" @click="openPdf">Подробнее</button>
                                 <button v-else class="button" @click="showModal(service.name)">Подробнее</button>
                                 <div v-if="modals[service.name]" @click.self="closeModal(service.name)" class="modal-shadow">
                                     <div class="modal">
@@ -262,7 +261,6 @@
                         <div class="price_of_service_mobile" v-html="formatPrice(service)"></div>
                         <div class="button_mobile_wrapper">
                             <button v-if="service.name=='Полный<br>дизайн-проект'" class="button_mobile" @click="forward('.stages_mobile', 100)">Подробнее</button>
-                            <button v-else-if="service.name=='Эскизный проект'" class="button_mobile" @click="openPdf">Подробнее</button>
                             <button v-else class="button_mobile" @click="showModal(service.name)">Подробнее</button>
                         </div>
                         <div v-if="modals[service.name]" @click.self="closeModal(service.name)" class="modal-shadow_mobile">
@@ -328,7 +326,7 @@
 
                             <h6>Рабочая документация</h6>
                             <p class="work_documentation_text"> 
-                                Полный комплект строительных чертежей согласно списку.
+                                Полный комплект чертежей, необходимых для реализации проекта (планировочные решения, схемы электрики, светильников, включателей, сантехники,  планы  полов и  потолков, развертки стен со всеми необходимыми данными и размерами).<br>Чтобы иметь более четкое представление о том, какие чертежи содержит дизайн-проект, я могу выслать Вам один из моих последних проектов для ознакомления.
                             </p>
                             <img class="work_documentation_image" src="@/assets/images/work_document.png" alt="">
                         </div>
@@ -344,8 +342,7 @@
                                 мебель и декор и указанием их стоимости.Так как<br>
                                 таблица является редактируемым документом, Вы<br>
                                 можете самостоятельно менять позиции и четко<br>
-                                контролировать бюджет в процессе реализации<br>
-                                дизайн-проекта.
+                                контролировать бюджет в процессе ремонта.
                             </p>
                             <img class="complectation_image" src="@/assets/images/complectation.png" alt="">
                         </div>
@@ -361,16 +358,16 @@
                             <div class="digit_mobile">{{ index + 1 }}</div>
                         </div>
                         <div class="block_of_step_left_mobile">
-                            <div class="name_of_step_mobile">{{ step.name }}</div>
-                            <div class="description_of_step_mobile">{{ step.description }}</div>
+                            <div class="name_of_step_mobile" v-html="step.name"></div>
+                            <div class="description_of_step_mobile" v-html="step.description"></div>
                             <img class="img_mobile" :src="step.photo" alt="">
                         </div>
                     </div>
 
                     <div class="one_step" v-else>
                         <div class="block_of_step_right_mobile">
-                            <div class="name_of_step_mobile">{{ step.name }}</div>
-                            <div class="description_of_step_mobile">{{ step.description }}</div>
+                            <div class="name_of_step_mobile" v-html="step.name"></div>
+                            <div class="description_of_step_mobile" v-html="step.description"></div>
                             <img class="img_mobile" :src="step.photo" alt="">
                         </div>
                         <div class="digit_container_mobile">
@@ -557,10 +554,10 @@
                     description: 'Процесс создания трехмерной модели пространства и передачи его внешнего вида. Позволяет наглядно представить клиенту конечный результат проекта до его реализации.', 
                     photo: vizualizationImage},
                     { name: 'Рабочая документация',
-                    description: 'Полный комплект строительных чертежей согласно списку.', 
+                    description: 'Полный комплект чертежей, необходимых для реализации проекта (планировочные решения, схемы электрики, светильников, включателей, сантехники,  планы  полов и  потолков, развертки стен со всеми необходимыми данными и размерами).<br>Чтобы иметь более четкое представление о том, какие чертежи содержит дизайн-проект, я могу выслать Вам один из моих последних проектов для ознакомления.', 
                     photo: workDocumentImage},
                     { name: 'Комплектация',
-                    description: 'Конечный результат этапа комплектации представляет собой таблицу со ссылками на конкретные отделочные материалы, сантехнику, мебель и декор и указанием их стоимости. Так как таблица является редактируемым документом, Вы можете самостоятельно менять позиции и четко контролировать бюджет в процессе реализации дизайн-проекта.',
+                    description: 'Конечный результат этапа комплектации представляет собой таблицу со ссылками на конкретные отделочные материалы, сантехнику, мебель и декор и указанием их стоимости. Так как таблица является редактируемым документом, Вы можете самостоятельно менять позиции и четко контролировать бюджет в процессе ремонта.',
                     photo: complectationImage}
                 ],
                 options: [
@@ -690,15 +687,15 @@
             this.getPortfolio();
             document.querySelector('.slider').addEventListener('input', function() {
                 let value = this.value;
-                document.querySelector('.result-block1').innerText = value * 1200;
+                document.querySelector('.result-block1').innerText = value * 1500;
                 document.querySelector('.result-block2').innerText = value * 300;
-                document.querySelector('.result-block3').innerText = value * 1200;
+                document.querySelector('.result-block3').innerText = value * 1500;
                 document.querySelector('.result-block4').innerText = value * 300;
             });
 
             document.querySelector('.slider1').addEventListener('input', function() {
                 let value = this.value;
-                document.querySelector('.result-block3').innerText = value * 1200;
+                document.querySelector('.result-block3').innerText = value * 1500;
                 document.querySelector('.result-block4').innerText = value * 300;
             });
             // Валидация для заявки
