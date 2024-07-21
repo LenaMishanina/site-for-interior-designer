@@ -3,18 +3,20 @@
 
             <!-- БЛОК "НАВИГАЦИОННОЕ МЕНЮ" -->
             <div class="navigation_menu_top">
-                <div class="logo_top" @click="forward('.main_frame', 150)">MILKOVA<br>PROJECT.RU</div>
-                <div class="image_for_open_menu">
-                    <img @click="toggleMenu" src="../assets/images/menu.png" alt="">
-                </div>
-                <div class="list_with_button_to_blocks_top">
-                    <button @click="forward('.calculate_prices', 150)" class="button_to_prices_top">ЦЕНЫ</button>
-                    <button @click="forward('.about_me', 140)" class="button_to_about_me_top">ОБО МНЕ</button>
-                    <button @click="forward('.service', 80)" class="button_to_services_top">УСЛУГИ</button>
-                    <button @click="forward('.stages', 80)" class="button_to_stages_top">ЭТАПЫ</button>
-                    <button @click="forward('.portfolio', 80)" class="button_to_portfolio_top">ПОРТФОЛИО</button>
-                    <button @click="forward('.request', 30)" class="button_to_request_top">ЗАЯВКА</button>
-                    <button @click="forward('.contacts', 0)" class="button_to_contacts_top">КОНТАКТЫ</button>
+                <div class="navigation_menu_top_main">
+                    <div class="logo_top" @click="forward('.main_frame', 150)">MILKOVA<br>PROJECT.RU</div>
+                    <div class="image_for_open_menu">
+                        <img @click="toggleMenu" src="../assets/images/menu.png" alt="">
+                    </div>
+                    <div class="list_with_button_to_blocks_top">
+                        <button @click="forward('.calculate_prices', 150)" class="button_to_prices_top">ЦЕНЫ</button>
+                        <button @click="forward('.about_me', 140)" class="button_to_about_me_top">ОБО МНЕ</button>
+                        <button @click="forward('.service', 80)" class="button_to_services_top">УСЛУГИ</button>
+                        <button @click="forward('.stages', 80)" class="button_to_stages_top">ЭТАПЫ</button>
+                        <button @click="forward('.portfolio', 80)" class="button_to_portfolio_top">ПОРТФОЛИО</button>
+                        <button @click="forward('.request', 30)" class="button_to_request_top">ЗАЯВКА</button>
+                        <button @click="forward('.contacts', 0)" class="button_to_contacts_top">КОНТАКТЫ</button>
+                    </div>
                 </div>
             </div>
             <div :class="['nav_menu_for_mobile', { show: isMenuVisible }]">
@@ -41,13 +43,17 @@
 
             <!-- БЛОК "ТИТУЛЬНИК" -->
             <div class="small_section_about_me">
-                <img class="first_photo" src="../assets/images/interior_photo.png" alt="">
-                <div class="main_theme">
-                    <p class="main_text">Дизайн интерьера<br>в Ярославле</p>
-                    <button @click="forward('.request', 30)" class="button_for_get_consultation">Получить консультацию</button>
-                </div>
-                <div class="second_photo_and_text">
-                    <img class="second_photo" src="../assets/images/bedroom.png" alt="">
+                <div class="small_section_about_me_main">
+                    <div class="first_photo_container">
+                        <img class="first_photo" src="../assets/images/interior_photo.png" alt="">
+                    </div>
+                    <div class="main_theme">
+                        <p class="main_text">Дизайн интерьера<br>в Ярославле</p>
+                        <button @click="forward('.request', 30)" class="button_for_get_consultation">Получить консультацию</button>
+                    </div>
+                    <div class="second_photo_container">
+                        <img class="second_photo" src="../assets/images/bedroom.png" alt="">
+                    </div>
                 </div>
             </div>
             <div class="small_section_about_me_mobile">
