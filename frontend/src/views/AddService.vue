@@ -27,7 +27,7 @@
               <!--price-->
                   <div class="price">
                     <label for="price" class="form_label">Стоимость:</label>
-                    <input id="price" type="number"  name="price" class="form-control" v-model="service.price" >
+                    <input id="price" type="text"  name="price" class="form-control" v-model="service.price" >
                   </div>
 
               <!--value_measure-->

@@ -16,14 +16,14 @@ public class ServiceEntity {
     @Column(name = "long_description")
     private String long_description;
     @Column(name = "price")
-    private Long price;
+    private String price;
     @Column(name = "value_measure")
     private String value_measure;
 
     public ServiceEntity() {
     }
 
-    public ServiceEntity(Long id, String name, String short_description, String long_description, Long price, String value_measure) {
+    public ServiceEntity(Long id, String name, String short_description, String long_description, String price, String value_measure) {
         this.id = id;
         this.name = name;
         this.short_description = short_description;
@@ -64,11 +64,11 @@ public class ServiceEntity {
         this.long_description = long_description;
     }
 
-    public Long getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(Long price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
