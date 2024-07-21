@@ -68,14 +68,24 @@ public class PortfolioController {
     }
     @DeleteMapping("/portfolio/{id}")
     public String deleteImage(@PathVariable("id") long id){
+        PortfolioEntity imageToDelete = service.getImageById(id);
+        if (imageToDelete == null) {
+            return "Error : image not found";
+        }
+
         service.deleteImage(id);
 
-        //Обновляет index после удаления фото
-//        List<PortfolioEntity> images = new ArrayList<>();
-//        images.stream()
-//                .sorted(Comparator.comparingInt(PortfolioEntity::getIndex))
-//                .forEach(entity -> entity.setIndex(images.indexOf(entity)));
-        return "Image was removed successfully...";
+        String imagePath = imageToDelete.getPath();
+        String fileName = imagePath.substring(imagePath.lastIndexOf("/") + 1);
+        Path filePath = Paths.get(uploadDir + "/" + fileName);
+
+        try {
+            Files.delete(filePath);
+        } catch (IOException e) {
+            return "Error : deleting file";
+        }
+
+        return "Image was removed successfully";
     }
 
 
