@@ -20,24 +20,28 @@
                 </div>
             </div>
             <div :class="['nav_menu_for_mobile', { show: isMenuVisible }]">
-                    <div class="logo" @click="forward('.small_section_about_me_mobile', 200)">MILKOVA<br>PROJECT.RU</div>
-                    <div class="container_for_double_arrow">
-                        <img @click="toggleMenu" class="double_arrow" src="../assets/images/double_arrow.png">
+                <div class="nav_menu_for_mobile_container">
+                    <div class="logo_and_img_container">
+                        <div class="logo" @click="forward('.small_section_about_me_mobile', 200)">MILKOVA<br>PROJECT.RU</div>
+                        <div class="container_for_double_arrow">
+                            <img @click="toggleMenu" class="double_arrow" src="../assets/images/double_arrow.png">
+                        </div>
                     </div>
-                    <ul class="list_of_blocks">
-                        <li @click="secondForward('.calculate_prices_mobile', 100)">ЦЕНЫ</li>
-                        <li @click="secondForward('.about_me_mobile', 100)">ОБО МНЕ</li>
-                        <li @click="secondForward('.service_mobile', 70)">УСЛУГИ</li>
-                        <li @click="secondForward('.stages_mobile', 100)">ЭТАПЫ</li>
-                        <li @click="secondForward('.portfolio_mobile', 100)">ПОРТФОЛИО</li>
-                        <li @click="secondForward('.request', 100)">ЗАЯВКА</li>
-                        <li @click="secondForward('.bottom_mobile', 70)">КОНТАКТЫ</li>
-                    </ul>
+                    <div class="list_of_blocks">
+                        <p @click="secondForward('.calculate_prices_mobile', 100)">ЦЕНЫ</p>
+                        <p @click="secondForward('.about_me_mobile', 100)">ОБО МНЕ</p>
+                        <p @click="secondForward('.service_mobile', 70)">УСЛУГИ</p>
+                        <p @click="secondForward('.stages_mobile', 100)">ЭТАПЫ</p>
+                        <p @click="secondForward('.portfolio_mobile', 100)">ПОРТФОЛИО</p>
+                        <p @click="secondForward('.request', 100)">ЗАЯВКА</p>
+                        <p @click="secondForward('.bottom_mobile', 70)">КОНТАКТЫ</p>
+                    </div>
                     <div class="contacts_mobile">
                         <a href="https://instagram.com/alina_milkova_project"><img class="icon_instagram" src="../assets/images/inst_icon.png" alt=""></a>
                         <a href="tel:+79159849794"><img class="icon_telephone" src="../assets/images/telephone_icon.png" alt=""></a>
                         <a href="mailto:kalina-@mail.ru"><img class="icon_mail" src="../assets/images/mail_icon.png" alt=""></a>
                     </div>
+                </div>
             </div>
             <!-- КОНЕЦ -->
 
