@@ -7,16 +7,23 @@
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     background-color: rgba(0, 0, 0, 0.6);
-    justify-content: center;
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation_menu_top_main {
+    width: 90%;
+    max-width: 1600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo_top {
     color: #a59a94;
     font-family: 'JuliusSansOne-Regular';
     font-size: 27px;
-    margin-top: 14px;
-    margin-right: 230px;
     float: left;
     animation: animation_for_logo_top 4s ease-in-out none;
     cursor: default;
@@ -32,29 +39,27 @@
 }
 
 .list_with_button_to_blocks_top {
+    width: 60%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-family: 'Bitter-Light';
-    width: 1000px;
-    font-size: 15px;
-    margin-left: 100px;
-    margin-top: 32px;
-    left: 36%;
     color: #a59a94;
 }
 
 .button_to_about_me_top,  .button_to_prices_top, .button_to_services_top, .button_to_stages_top, .button_to_portfolio_top, .button_to_request_top, .button_to_contacts_top {
+    height: 22px;
     font-size: 15px;
     color: transparent;
     font-family: 'Bitter-Light';
     background-color: transparent;
-    font-weight: 100;
-    padding-left: 3px;
     padding-left: 5px;
     padding-right: 5px;
     border: 1px solid transparent;
     border-radius: 20px;
     box-sizing: border-box;
     transition: background-color 0.5s, border 0.5s, color 0.5s;
-    margin-left: 50px;
     font-weight: 100;
     cursor: pointer;
 }
