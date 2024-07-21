@@ -1,5 +1,6 @@
 @media (min-width: 700px) {
 .small_section_about_me {
+    width: 100%;
     display: flex;
     position: relative;
     justify-content: center;
@@ -7,10 +8,22 @@
     margin-bottom: 120px;
 }
 
-.main_theme {
-    flex-direction: column;
+.small_section_about_me_main {
+    width: 95%;
+    max-width: 1600px;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-    margin-top: 350px;
+    margin-top: 200px;
+}
+
+.main_theme {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .main_text {
@@ -21,64 +34,46 @@
 }
 
 .button_for_get_consultation {
+    margin-top: 100px;
     color: #eae7de; 
     font-family: 'Bitter-Light'; 
     font-size: 20px; 
-    width: 450px; 
+    width: 90%; 
     height: 50px; 
     background: transparent; 
     border: 2px solid #eae7de; 
     border-radius: 40px; 
-    margin-top: 200px;
     cursor: pointer; 
     transition: background-color 0.3s, color 0.3s;
 }
 
 .button_for_get_consultation:hover {
     font-weight: 600; 
-    background-color: #721607 ; 
+    background-color: #721607; 
     color: #eae7de;
 }
 
 .button_for_get_consultation:active { 
     transition: background-color 0.001s, color 0.001s; 
-    font-weight: 100; 
+    font-weight: 100;
     color: #eae7de;
-    background-color: transparent; 
+    background-color: transparent;
+}
+
+.first_photo_container {
+    width: 25%;
+}
+
+.second_photo_container {
+    width: 25%;
 }
 
 .first_photo {
-    position: absolute;
-    margin-top: 200px;
-    margin-right: 1100px;
-
+    width: 100%;
 }
 
 .second_photo {
-    position: absolute;
-    display: block;
-    width: auto;
-    height: 520px;
-    margin-top: -150px;
-    margin-left: 120px;
-}
-
-.text_on_photo_name {
-    position: absolute;
-    top: 485px;
-    left: 215px;
-    color: #eae7de; 
-    font-family: 'Bitter-Light';
-    font-size: 20px;
-}
-
-.text_on_photo_profession {
-    position: absolute;
-    top: 508px;
-    left: 225px;
-    color: #eae7de; 
-    font-family: 'Bitter-Light';
-    font-size: 16px;
+    width: 100%;
 }
 
 .small_section_about_me_mobile {
