@@ -8,31 +8,31 @@
                  <!--name-->
                 <div class="name">
                   <label for="name" class="form-label">Название</label>
-                  <input id="name"  type="text" name="name" class="form-control" required v-model="service.name">
+                  <input id="name"  type="text" name="name" class="form-control" v-model="service.name">
                 </div>
               
               <!--short_description-->
                   <div class="short_description">
                     <label for="short_description" class="form-label">Видимое описание</label>
-                    <input id="short_description" type="text"  name="short_description" class="form-control" required v-model="service.short_description" >
+                    <input id="short_description" type="text"  name="short_description" class="form-control" v-model="service.short_description" >
                   </div>
 
               <!--long_description-->
                   <div class="long_description">
                     <label for="long_description" class="form-label">Скрытое описание</label>
-                    <input id="long_description" type="text"  name="long_description" class="form-control" required v-model="service.long_description" >
+                    <input id="long_description" type="text"  name="long_description" class="form-control" v-model="service.long_description" >
                   </div>
     
               <!--price-->
                   <div class="price">
                     <label for="price" class="form-label">Стоимость</label>
-                    <input id="price" type="number"  name="price" class="form-control" required v-model="service.price" >
+                    <input id="price" type="text"  name="price" class="form-control" v-model="service.price" >
                   </div>
 
               <!--value_measure-->
                   <div class="value_measure">
                     <label for="value_measure" class="form-label">Ед. измерения стоимости</label>
-                    <input id="value_measure" type="text"  name="value_measure" class="form-control" required v-model="service.value_measure" >
+                    <input id="value_measure" type="text"  name="value_measure" class="form-control" v-model="service.value_measure" >
                   </div>
           
                 <div class="col-md-12 form-group">
