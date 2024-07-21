@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import '../assets/js/bootstrap.min.js';
+// import '../assets/js/bootstrap.min.js';
 import axios from 'axios'
 
 export default {
@@ -25,7 +25,7 @@ export default {
   setup() {
       const logout = async () => {
           try {
-              await axios.post('http://localhost:8080/api/logout', {}, { withCredentials: true });
+              await axios.post(import.meta.env.VITE_APP_API_URL_LOGOUT, {}, { withCredentials: true });
               localStorage.setItem('token', '');
               this.$router.push('/admin');
           } catch (error) {

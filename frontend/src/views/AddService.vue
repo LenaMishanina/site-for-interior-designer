@@ -52,7 +52,7 @@
 
 
 <script>
-import '../assets/js/bootstrap.min.js';
+// import '../assets/js/bootstrap.min.js';
 import Navbar from '../components/Navbar.vue';
 
   export default {
@@ -75,7 +75,7 @@ import Navbar from '../components/Navbar.vue';
 
       methods: {
           addService(){
-              fetch('http://localhost:8080/service/add', {
+              fetch(import.meta.env.VITE_APP_API_URL_ADDSERVICE, {
                   method: 'POST',
                   headers: {
                       'Content-Type': 'application/json'
@@ -83,7 +83,6 @@ import Navbar from '../components/Navbar.vue';
                   body: JSON.stringify(this.service)
               })
               .then(data => {
-                  console.log(data)
                   this.$router.push("/admin/service");
               })
 

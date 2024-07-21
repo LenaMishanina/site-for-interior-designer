@@ -158,7 +158,7 @@
         margin-bottom: 30px;
     }
 
-    .slider {
+    .slider1 {
         appearance: none; 
         width: 70%; 
         height: 5px; 
@@ -167,7 +167,7 @@
         border-radius: 12px;         
     }
 
-    .slider::-webkit-slider-thumb { 
+    .slider1::-webkit-slider-thumb { 
         appearance: none; 
         width: 20px; 
         height: 20px; 
@@ -178,7 +178,7 @@
         transition: border 0.2s;
     } 
     
-    .slider::-webkit-slider-thumb:hover { 
+    .slider1::-webkit-slider-thumb:hover { 
         appearance: none; 
         border: 2px solid #535353;
         background: #eae7de;

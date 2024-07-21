@@ -15,6 +15,8 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:5173")
+@RequestMapping("/api")
+
 public class PortfolioController {
     private final PortfolioService service;
     @Value("${file.upload-dir}")
