@@ -27,7 +27,7 @@
   "devDependencies": {
     "@types/inputmask": "^5.0.7",
     "@vitejs/plugin-vue": "^5.0.4",
-    "vite": "^5.3.3",
+    "vite": "^5.4.11",
     "vite-plugin-copy": "^0.1.6",
     "vite-plugin-static-copy": "^1.0.6"
   }
